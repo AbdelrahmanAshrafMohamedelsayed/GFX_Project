@@ -32,7 +32,7 @@ namespace our {
     // An example where this material can be used is when the whole object has only color which defined by tint
     class TintedMaterial : public Material {
     public:
-        glm::vec4 tint;
+        glm::vec4 tint; // uniform tint
 
         void setup() const override;
         void deserialize(const nlohmann::json& data) override;
