@@ -16,7 +16,7 @@ our::Texture2D* our::texture_utils::loadImage(const std::string& filename, bool 
     glm::ivec2 size;
     int channels;
     //Since OpenGL puts the texture origin at the bottom left while images typically has the origin at the top left,
-    //We need to till stb to flip images vertically after loading them
+    // We need to till stb to flip images vertically after loading them
     stbi_set_flip_vertically_on_load(true);
     //Load image data and retrieve width, height and number of channels in the image
     //The last argument is the number of channels we want and it can have the following values:
@@ -36,6 +36,24 @@ our::Texture2D* our::texture_utils::loadImage(const std::string& filename, bool 
     //Bind the texture such that we upload the image data to its storage
     //TODO: (Req 5) Finish this function to fill the texture with the data found in "pixels"
     
+    //Bind the texture such that we upload the image data to its storage
+    texture->bind();
+
+    //Set the texture's parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, generate_mipmap ? GL_LINEAR_MIPMAP_LINEAR : GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    //Upload the image data to the texture
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size.x, size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+    //Generate mipmaps if requested
+    if(generate_mipmap) {
+    glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    our::Texture2D::unbind();
     stbi_image_free(pixels); //Free image data after uploading to GPU
     return texture;
 }
