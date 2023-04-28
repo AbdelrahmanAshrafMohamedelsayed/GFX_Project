@@ -3,21 +3,25 @@
 #include "../asset-loader.hpp"
 #include "deserialize-utils.hpp"
 
-namespace our {
+namespace our
+{
 
     // This function should setup the pipeline state and set the shader to be used
-    void Material::setup() const {
-        //TODO: (Req 7) Write this function
-        pipelineState.setup();
-        shader->use();
-
+    void Material::setup() const
+    {
+        // TODO: (Req 7) Write this function
+        pipelineState.setup(); // setup pipeline state
+        shader->use();         // set the shader to be used
     }
 
     // This function read the material data from a json object
-    void Material::deserialize(const nlohmann::json& data){
-        if(!data.is_object()) return;
+    void Material::deserialize(const nlohmann::json &data)
+    {
+        if (!data.is_object())
+            return;
 
-        if(data.contains("pipelineState")){
+        if (data.contains("pipelineState"))
+        {
             pipelineState.deserialize(data["pipelineState"]);
         }
         shader = AssetLoader<ShaderProgram>::get(data["shader"].get<std::string>());
@@ -25,37 +29,45 @@ namespace our {
     }
 
     // This function should call the setup of its parent and
-    // set the "tint" uniform to the value in the member variable tint 
-    void TintedMaterial::setup() const {
-        //TODO: (Req 7) Write this function
+    // set the "tint" uniform to the value in the member variable tint
+    void TintedMaterial::setup() const
+    {
+        // TODO: (Req 7) Write this function
+        //  call the setup function of the parent class
         Material::setup();
+        // set the value of "tint" uniform in the shader to the value of "tint" member variable
         shader->set("tint", tint);
-        
     }
 
     // This function read the material data from a json object
-    void TintedMaterial::deserialize(const nlohmann::json& data){
+    void TintedMaterial::deserialize(const nlohmann::json &data)
+    {
         Material::deserialize(data);
-        if(!data.is_object()) return;
+        if (!data.is_object())
+            return;
         tint = data.value("tint", glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
     }
 
     // This function should call the setup of its parent and
     // set the "alphaThreshold" uniform to the value in the member variable alphaThreshold
-    // Then it should bind the texture and sampler to a texture unit and send the unit number to the uniform variable "tex" 
-    void TexturedMaterial::setup() const {
-        //TODO: (Req 7) Write this function
-        TintedMaterial::setup();
-        texture->bind();
-        sampler->bind(0);
-        shader->set("tex", 0);
-        shader->set("alphaThreshold", alphaThreshold);
+    // Then it should bind the texture and sampler to a texture unit and send the unit number to the uniform variable "tex"
+    void TexturedMaterial::setup() const
+    {
+        // TODO: (Req 7) Write this function
+
+        TintedMaterial::setup();                       // call the setup function of the parent class
+        texture->bind();                               // bind the texture
+        sampler->bind(0);                              // bind the sampler to the texture unit 0
+        shader->set("tex", 0);                         // set the value of "tex" uniform in the shader to 0
+        shader->set("alphaThreshold", alphaThreshold); // set the value of "alphaThreshold" uniform in the shader to the value of "alphaThreshold" member variable
     }
 
     // This function read the material data from a json object
-    void TexturedMaterial::deserialize(const nlohmann::json& data){
+    void TexturedMaterial::deserialize(const nlohmann::json &data)
+    {
         TintedMaterial::deserialize(data);
-        if(!data.is_object()) return;
+        if (!data.is_object())
+            return;
         alphaThreshold = data.value("alphaThreshold", 0.0f);
         texture = AssetLoader<Texture2D>::get(data.value("texture", ""));
         sampler = AssetLoader<Sampler>::get(data.value("sampler", ""));

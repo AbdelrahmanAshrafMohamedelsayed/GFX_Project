@@ -22,6 +22,7 @@ uniform vec2 scale = vec2(1.0, 1.0);
 //TODO: (Req 1) Finish this shader
 
 void main(){
+    // first, we need to define the positions and colors of the vertices
    vec3 positions[3] = vec3[3] (
         vec3(-0.5, -0.5, 0.0),
         vec3( 0.5, -0.5, 0.0),
@@ -32,10 +33,11 @@ void main(){
         vec3(0.0, 1.0, 0.0),
         vec3(0.0, 0.0, 1.0)
     );
+    // then, we need to send the color to the fragment shader
     vs_out.color = colors[gl_VertexID];
-    // gl_Position = vec4(scale * positions[gl_VertexID] + translation, 1.0);
-    // vec3 transformedPosition = vec3(scale * positions[gl_VertexID] + vec3(translation, 0.0));
-    // gl_Position = vec4(transformedPosition, 1.0);
+    // finally, we need to transform the position of the vertices
+    // we can do this by multiplying the position by the scale and adding the translation
+    // we can use the gl_VertexID to index into the positions array
     vec2 transformedPosition = scale * positions[gl_VertexID].xy + translation;
     gl_Position = vec4(transformedPosition, 0.0, 1.0);
 }

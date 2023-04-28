@@ -4,24 +4,26 @@
 
 #include <glm/gtx/euler_angles.hpp>
 
-namespace our {
+namespace our
+{
 
     // This function returns the transformation matrix from the entity's local space to the world space
     // Remember that you can get the transformation matrix from this entity to its parent from "localTransform"
     // To get the local to world matrix, you need to combine this entities matrix with its parent's matrix and
     // its parent's parent's matrix and so on till you reach the root.
-    glm::mat4 Entity::getLocalToWorldMatrix() const {
-        //TODO: (Req 8) Write this function
-        // glm::mat4 result=localTransform.getLocalToWorldMatrix();
+    glm::mat4 Entity::getLocalToWorldMatrix() const
+    {
+        // TODO: (Req 8) Write this function
+        //  Start with this entity's local transformation matrix
         glm::mat4 result = localTransform.toMat4();
-        // Entity* parent = this->parent;
-        // while (parent != nullptr) {
-        //     result = parent->localTransform.toMat4() * result;
-        //     parent = parent->parent;
-        // }
-        if(parent){
-            Entity* current = this->parent;
-            while (current != nullptr) {
+        // If the entity has a parent, continue to its parent's transformation matrix and multiply it with the current matrix
+        if (parent)
+        {
+            // we will loop through the parents until we reach the root
+            // we will multiply the local transformation matrix of each parent with the current matrix
+            Entity *current = this->parent;
+            while (current != nullptr)
+            {
                 result = parent->localTransform.toMat4() * result;
                 current = current->parent;
             }
@@ -30,13 +32,18 @@ namespace our {
     }
 
     // Deserializes the entity data and components from a json object
-    void Entity::deserialize(const nlohmann::json& data){
-        if(!data.is_object()) return;
+    void Entity::deserialize(const nlohmann::json &data)
+    {
+        if (!data.is_object())
+            return;
         name = data.value("name", name);
         localTransform.deserialize(data);
-        if(data.contains("components")){
-            if(const auto& components = data["components"]; components.is_array()){
-                for(auto& component: components){
+        if (data.contains("components"))
+        {
+            if (const auto &components = data["components"]; components.is_array())
+            {
+                for (auto &component : components)
+                {
                     deserializeComponent(component, this);
                 }
             }

@@ -6,26 +6,42 @@
 #include "free-camera-controller.hpp"
 #include "movement.hpp"
 
-namespace our {
+namespace our
+{
 
     // Given a json object, this function picks and creates a component in the given entity
     // based on the "type" specified in the json object which is later deserialized from the rest of the json object
-    inline void deserializeComponent(const nlohmann::json& data, Entity* entity){
+    inline void deserializeComponent(const nlohmann::json &data, Entity *entity)
+    {
         std::string type = data.value("type", "");
-        Component* component = nullptr;
-        //TODO: (Req 8) Add an option to deserialize a "MeshRendererComponent" to the following if-else statement
-        if(type == CameraComponent::getID()){
+        Component *component = nullptr;
+        // TODO: (Req 8) Add an option to deserialize a "MeshRendererComponent" to the following if-else statement
+        //  Check the "type" field against different component types
+
+        if (type == CameraComponent::getID())
+        {
+            // If it matches CameraComponent, create a new CameraComponent and set the pointer to it
             component = entity->addComponent<CameraComponent>();
-        } else if (type == FreeCameraControllerComponent::getID()) {
+        }
+        else if (type == FreeCameraControllerComponent::getID())
+        {
+            // If it matches FreeCameraControllerComponent, create a new FreeCameraControllerComponent and set the pointer to it
             component = entity->addComponent<FreeCameraControllerComponent>();
-        } else if (type == MovementComponent::getID()) {
+        }
+        else if (type == MovementComponent::getID())
+        {
+            // If it matches MovementComponent, create a new MovementComponent and set the pointer to it
             component = entity->addComponent<MovementComponent>();
-        } else if (type == MeshRendererComponent::getID()) {
+        }
+        else if (type == MeshRendererComponent::getID())
+        {
+            // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
             component = entity->addComponent<MeshRendererComponent>();
-        } 
+        }
 
-
-        if(component) component->deserialize(data);
+        // If a component has been created, deserialize the rest of the input json object into it
+        if (component)
+            component->deserialize(data);
     }
 
 }

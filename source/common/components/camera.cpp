@@ -42,13 +42,16 @@ namespace our
         //  - the center position which is the point (0,0,-1) but after being transformed by M
         //  - the up direction which is the vector (0,1,0) but after being transformed by M
         //  then you can use glm::lookAt
+        // create eye center and up in world space
         glm::vec3 eye = glm::vec3(0.0f);
         glm::vec3 center = glm::vec3(0.0f, 0.0f, -1.0f);
         glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+        // transform eye center and up to world space
         eye = glm::vec3(M * glm::vec4(eye, 1.0f));
         center = glm::vec3(M * glm::vec4(center, 1.0f));
         up = glm::vec3(M * glm::vec4(up, 0.0f));
         // return glm::mat4(1.0f);
+        // lookAt is a function that takes eye, center and up and returns the view matrix
         return glm::lookAt(eye, center, up);
     }
 
@@ -61,18 +64,27 @@ namespace our
         //  It takes left, right, bottom, top. Bottom is -orthoHeight/2 and Top is orthoHeight/2.
         //  Left and Right are the same but after being multiplied by the aspect ratio
         //  For the perspective camera, you can use glm::perspective
+        // if the type is orthographic
         if (cameraType == CameraType::ORTHOGRAPHIC)
         {
+            // set aspectRatio to be the aspect ratio of the viewport
             float aspectRatio = viewportSize.x / (float)viewportSize.y;
+            // set left right bottom and top
             float left = -orthoHeight * aspectRatio / 2.0;
             float right = orthoHeight * aspectRatio / 2.0;
             float bottom = -orthoHeight / 2.0;
             float top = orthoHeight / 2.0;
+            // return the orthographic projection matrix
             return glm::ortho(left, right, bottom, top, near, far);
         }
+        // if the type is perspective
         else
         {
+            // return the perspective projection matrix
             float aspectRatio = viewportSize.x / (float)viewportSize.y;
+            // - fovY is the vertical field of view in radians
+            // - aspectRatio is the aspect ratio of the viewport
+            // - near and far are the distances to the near and far planes
             return glm::perspective(fovY, aspectRatio, near, far);
         }
     }
