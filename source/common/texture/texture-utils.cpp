@@ -11,8 +11,10 @@ our::Texture2D *our::texture_utils::empty(GLenum format, glm::ivec2 size)
     // TODO: (Req 11) Finish this function to create an empty texture with the given size and format
     // Bind the texture such that we upload the image data to its storage
     texture->bind();
-    glTexStorage2D(GL_TEXTURE_2D, 1, format, size.x, size.y);
-
+    // Allocate memory for the texture to be stored in the GPU
+    // 1: number of mipmap levels , 2: format of the texture, 3: width, 4: height
+    glTexStorage2D(GL_TEXTURE_2D, 1, format, size.x, size.y); 
+    
     return texture;
 }
 

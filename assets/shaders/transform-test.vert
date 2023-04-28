@@ -16,7 +16,7 @@ uniform mat4 transform;
 
 void main(){
     //TODO: (Req 3) Change the next line to apply the transformation matrix
-    gl_Position = transform * vec4(position, 1.0);
+    gl_Position = transform * vec4(position, 1.0); // applying the transformation matrix to the position
     // vec3 position = transform * vec4(position, 1.0);
     // No need to change any of the following lines
     vs_out.position = position;

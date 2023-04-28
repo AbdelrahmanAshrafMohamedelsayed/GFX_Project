@@ -35,7 +35,7 @@ namespace our
             //  For the attribute locations, use the constants defined above: ATTRIB_LOC_POSITION, ATTRIB_LOC_COLOR, etc
 
             elementCount = elements.size();
-            
+            // here we generate the buffers and vertex array object then bind them to set the data for them
             glGenBuffers(1, &VBO);
             glBindBuffer(GL_ARRAY_BUFFER, VBO);
             glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
@@ -70,6 +70,7 @@ namespace our
         void draw()
         {
             // TODO: (Req 2) Write this function
+            // Here in this function we bind the vertex array object and draw the elements and then unbind the vertex array object
             glBindVertexArray(VAO);
             glDrawElements(GL_TRIANGLES, elementCount, GL_UNSIGNED_INT, 0);
             glBindVertexArray(0);
@@ -79,6 +80,7 @@ namespace our
         ~Mesh()
         {
             // TODO: (Req 2) Write this function
+            // in destructor we delete the buffers and vertex array object
             glDeleteBuffers(1, &VBO);
             glDeleteBuffers(1, &EBO);
             glDeleteVertexArrays(1, &VAO);
