@@ -26,7 +26,6 @@ namespace our
             //  Hints: the sky will be draw after the opaque objects so we would need depth testing but which depth funtion should we pick?
 
             //  We will draw the sphere from the inside, so what options should we pick for the face culling
-            .
             PipelineState skyPipelineState{}; // Here we create a pipeline state object to store the pipeline state
 
             // this two lines to enable depth testing and set the depth function to GL_LEQUAL (the sky will be drawn after the opaque objects)
