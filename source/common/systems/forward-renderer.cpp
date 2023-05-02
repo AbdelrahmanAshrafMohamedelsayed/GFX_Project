@@ -175,17 +175,17 @@ namespace our
         //  HINT: See how you wrote the CameraComponent::getViewMatrix, it should help you solve this one
         // glm::vec3 cameraForward = glm::vec3(0.0, 0.0, -1.0f);
         
-        
+        glm::vec3 cameraForward = -glm::vec3(camera->getViewMatrix()[2]);
         auto owner = camera->getOwner(); 
-        auto M = owner->getLocalToWorldMatrix();
-        glm::vec3 center = glm::vec3(0.0f, 0.0f, -1.0f);  
-        glm::vec3 eye = glm::vec3(0.0f); 
-        center = glm::vec3(M * glm::vec4(center, 1.0f)); 
-        eye = glm::vec3(M * glm::vec4(eye, 1.0f));
+        // auto M = owner->getLocalToWorldMatrix();
+        // glm::vec3 center = glm::vec3(0.0f, 0.0f, -1.0f);  
+        // glm::vec3 eye = glm::vec3(0.0f); 
+        // center = glm::vec3(M * glm::vec4(center, 1.0f)); 
+        // eye = glm::vec3(M * glm::vec4(eye, 1.0f));
         // here we are getting the camera forward vector from the camera's view matrix
         // by normalizing the center of the camera -position where the camera is looking at- 
         // to the eye of the camera -position of the camera-
-        glm::vec3 cameraForward = glm::normalize(center - eye);
+        // glm::vec3 cameraForward = glm::normalize(center - eye);
         std::sort(transparentCommands.begin(), transparentCommands.end(), [cameraForward](const RenderCommand &first, const RenderCommand &second)
                   {
             //TODO: (Req 9) Finish this function
@@ -241,7 +241,7 @@ namespace our
             skyMaterial->setup();
 
             // TODO: (Req 10) Get the camera position
-            glm::vec3 cameraPosition = eye;
+            glm::vec3 cameraPosition = camera->getOwner()->localTransform.position;
 
             // TODO: (Req 10) Create a model matrix for the sy such that it always follows the camera (sky sphere center = camera position)
             Transform skyModelMat; // here we are creating a model matrix for the sky sphere
