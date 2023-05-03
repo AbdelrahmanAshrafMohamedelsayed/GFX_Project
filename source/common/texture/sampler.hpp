@@ -54,6 +54,8 @@ namespace our
             // TODO: (Req 6) Complete this function
             //  set the sampler parameter by passing the sampler id, the parameter to set and the value to set it to. i refers to integer
             glSamplerParameteri(name, parameter, value);
+            // glSamplerParameteri(sampler, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+            // glSamplerParameteri(sampler, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         }
 
         // This function sets a sampler paramter where the value is of type "GLfloat"

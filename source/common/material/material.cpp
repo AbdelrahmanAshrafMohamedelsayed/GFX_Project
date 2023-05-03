@@ -36,10 +36,10 @@ namespace our
         //  call the setup function of the parent class
         Material::setup();
         // set the value of "tint" uniform in the shader to the value of "tint" member variable
-        shader->set("tint", tint);
+        shader->set("tint", tint); // the tinted material may be colors only without textures
     }
 
-    // This function read the material data from a json object
+    // This function read the material data from a json object 
     void TintedMaterial::deserialize(const nlohmann::json &data)
     {
         Material::deserialize(data);
@@ -54,12 +54,13 @@ namespace our
     void TexturedMaterial::setup() const
     {
         // TODO: (Req 7) Write this function
-
         TintedMaterial::setup();                       // call the setup function of the parent class
-        texture->bind();                               // bind the texture
-        sampler->bind(0);                              // bind the sampler to the texture unit 0
-        shader->set("tex", 0);                         // set the value of "tex" uniform in the shader to 0
         shader->set("alphaThreshold", alphaThreshold); // set the value of "alphaThreshold" uniform in the shader to the value of "alphaThreshold" member variable
+        if(texture) 
+        texture->bind();                               // bind the texture
+        if(sampler) 
+        shader->set("tex", 0);                         // set the value of "tex" uniform in the shader to 0
+        sampler->bind(0);                              // bind the sampler to the texture unit 0
     }
 
     // This function read the material data from a json object
