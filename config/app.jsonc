@@ -1,5 +1,5 @@
 {
-    "start-scene": "menu",
+    "start-scene": "play",
     "window":
     {
         "title":"Default Game Window",
@@ -30,13 +30,16 @@
                 "grass": "assets/textures/grass_ground_d.jpg",
                 "wood": "assets/textures/wood.jpg",
                 "glass": "assets/textures/glass-panels.png",
-                "monkey": "assets/textures/monkey.png"
+                "monkey": "assets/textures/monkey.png",
+                "car": "assets/textures/car.BMP",
+                "road": "assets/textures/road.png"
+
             },
             "meshes":{
                 "cube": "assets/models/cube.obj",
                 "monkey": "assets/models/monkey.obj",
                 "plane": "assets/models/plane.obj",
-                "sphere": "assets/models/sphere.obj"
+                "sphere": "assets/models/Porsche.obj"
             },
             "samplers":{
                 "default":{},
@@ -122,13 +125,14 @@
                         }
                     },
                     "tint": [1, 1, 1, 1],
-                    "texture": "moon",
+                    "texture": "car",
                     "sampler": "default"
                 }
             }
         },
         "world":[
             {
+                "name": "me",
                 "position": [0, 0, 10],
                 "components": [
                     {
@@ -140,6 +144,7 @@
                 ],
                 "children": [
                     {
+                        // children there position represented by the parent
                         "position": [1, -1, -1],
                         "rotation": [45, 45, 0],
                         "scale": [0.1, 0.1, 1.0],
@@ -154,6 +159,7 @@
                 ]
             },
             {
+                "name": "monkey",
                 "rotation": [-45, 0, 0],
                 "components": [
                     {
@@ -169,6 +175,7 @@
                 ]
             },
             {
+                "name": "grass",
                 "position": [0, -1, 0],
                 "rotation": [-90, 0, 0],
                 "scale": [10, 10, 1],
@@ -181,7 +188,7 @@
                 ]
             },
             {
-                "position": [0, 1, 2],
+                "position": [0, 10, 2],
                 "rotation": [0, 0, 0],
                 "scale": [2, 2, 2],
                 "components": [
@@ -241,8 +248,8 @@
                 ]
             },
             {
-                "position": [0, 10, 0],
-                "rotation": [45, 45, 0],
+                "position": [30, 0, 0],
+                "rotation": [0, 0, 0],
                 "scale": [5, 5, 5],
                 "components": [
                     {
