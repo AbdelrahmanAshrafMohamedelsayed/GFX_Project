@@ -177,22 +177,19 @@ namespace our
         
         glm::vec3 cameraForward = -glm::vec3(camera->getViewMatrix()[2]);
         auto owner = camera->getOwner(); 
-        // auto M = owner->getLocalToWorldMatrix();
-        // glm::vec3 center = glm::vec3(0.0f, 0.0f, -1.0f);  
-        // glm::vec3 eye = glm::vec3(0.0f); 
-        // center = glm::vec3(M * glm::vec4(center, 1.0f)); 
-        // eye = glm::vec3(M * glm::vec4(eye, 1.0f));
+        
         // here we are getting the camera forward vector from the camera's view matrix
         // by normalizing the center of the camera -position where the camera is looking at- 
         // to the eye of the camera -position of the camera-
         // glm::vec3 cameraForward = glm::normalize(center - eye);
         std::sort(transparentCommands.begin(), transparentCommands.end(), [cameraForward](const RenderCommand &first, const RenderCommand &second)
-                  {
+        {
             //TODO: (Req 9) Finish this function
             // HINT: the following return should return true "first" should be drawn before "second". 
             
             bool checkDraw = glm::dot(cameraForward,first.center) > glm::dot(cameraForward , second.center) ? true : false; 
-            return checkDraw; }); 
+            return checkDraw;
+        }); 
 
         // TODO: (Req 9) Get the camera ViewProjection matrix and store it in VP
 
