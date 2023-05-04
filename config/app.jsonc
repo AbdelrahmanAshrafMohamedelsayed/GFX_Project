@@ -26,7 +26,7 @@
                 }
             },
             "textures":{
-                "moon": "assets/textures/moon.jpg",
+                "moon": "assets/textures/abdo.jpg",
                 "grass": "assets/textures/grass_ground_d.jpg",
                 "wood": "assets/textures/wood.jpg",
                 "glass": "assets/textures/glass-panels.png",
