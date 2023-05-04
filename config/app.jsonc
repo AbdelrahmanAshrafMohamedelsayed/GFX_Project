@@ -204,38 +204,11 @@
         },
         // any entry(entity) you want to add you must create an object for it the world
         "world":[
+
             {
-                "name": "me",
-                "position": [0, 0, 10],
-                "components": [
-                    {
-                        "type": "Camera"
-                    },
-                    {
-                        "type": "Free Camera Controller"
-                    }
-                ],
-                "children": [
-                    {
-                        // children there position represented by the parent
-                        "position": [1, -1, -1],
-                        "rotation": [45, 45, 0],
-                        "scale": [0.1, 0.1, 1.0],
-                        "components": [
-                            {
-                                "type": "Mesh Renderer",
-                                "mesh": "cube",
-                                "material": "metal"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "car",
-                "position": [5, -0.1, -5],
-                "rotation": [0, 0, 0],
-                "scale": [1.5, 1.5, 1.5],
+                "name": "robot",
+                "position": [0, -0.9, -15],
+                "scale": [0.8, 0.8, 0.8],
                 "components": [
                     {
                         "type": "Mesh Renderer",
@@ -243,27 +216,82 @@
                         "material": "car"
                     },
                     {
-                        "type": "Movement"
-                        // "angularVelocity": [0, 90, 0]
+                        "type": "Free Camera Controller"
+                    }
+                ],
+                "children": [
+                    {
+                        "position": [0, 6, 5],
+                        "rotation": [-30, 360, 0],
+                        "components": [
+                            {
+                                "type": "Camera"
+                            }
+                        ]
                     }
                 ]
             },
-            {
-                "name": "monkey",
-                "rotation": [-45, 0, 0],
-                "components": [
-                    {
-                        "type": "Mesh Renderer",
-                        "mesh": "monkey",
-                        "material": "monkey"
-                    },
-                    {
-                        "type": "Movement",
-                        "linearVelocity": [0, 0.1, 0],
-                        "angularVelocity": [0, 45, 0]
-                    }
-                ]
-            },
+
+            // {
+            //     "name": "me",
+            //     "position": [0, 0, 10],
+            //     "components": [
+            //         {
+            //             "type": "Camera"
+            //         },
+            //         {
+            //             "type": "Free Camera Controller"
+            //         }
+            //     ],
+            //     "children": [
+            //         {
+            //             // children there position represented by the parent
+            //             "position": [1, -1, -1],
+            //             "rotation": [45, 45, 0],
+            //             "scale": [0.1, 0.1, 1.0],
+            //             "components": [
+            //                 {
+            //                     "type": "Mesh Renderer",
+            //                     "mesh": "cube",
+            //                     "material": "metal"
+            //                 }
+            //             ]
+            //         }
+            //     ]
+            // },
+            // {
+            //     "name": "car",
+            //     "position": [5, -0.1, -5],
+            //     "rotation": [0, 0, 0],
+            //     "scale": [1.5, 1.5, 1.5],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "car",
+            //             "material": "car"
+            //         },
+            //         {
+            //             "type": "Movement"
+            //             // "angularVelocity": [0, 90, 0]
+            //         }
+            //     ]
+            // },
+            // {
+            //     "name": "monkey",
+            //     "rotation": [-45, 0, 0],
+            //     "components": [
+            //         {
+            //             "type": "Mesh Renderer",
+            //             "mesh": "monkey",
+            //             "material": "monkey"
+            //         },
+            //         {
+            //             "type": "Movement",
+            //             "linearVelocity": [0, 0.1, 0],
+            //             "angularVelocity": [0, 45, 0]
+            //         }
+            //     ]
+            // },
             {
                 "name": "road",
                 "position": [0, -1, 60],

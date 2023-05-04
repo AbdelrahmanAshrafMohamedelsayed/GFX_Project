@@ -238,7 +238,9 @@ namespace our
             skyMaterial->setup();
 
             // TODO: (Req 10) Get the camera position
-            glm::vec3 cameraPosition = camera->getOwner()->localTransform.position;
+            // glm::vec3 cameraPosition = camera->getOwner()->localTransform.position;
+            glm::vec3 cameraPosition = camera->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1.0);
+
 
             // TODO: (Req 10) Create a model matrix for the sy such that it always follows the camera (sky sphere center = camera position)
             Transform skyModelMat; // here we are creating a model matrix for the sky sphere
