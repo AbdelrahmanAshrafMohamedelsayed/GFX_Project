@@ -56,10 +56,11 @@ namespace our
         // TODO: (Req 7) Write this function
         TintedMaterial::setup();                       // call the setup function of the parent class
         shader->set("alphaThreshold", alphaThreshold); // set the value of "alphaThreshold" uniform in the shader to the value of "alphaThreshold" member variable
-        if(texture) 
-        texture->bind();                               // bind the texture
+        if(texture){ 
+            texture->bind();                               // bind the texture
+            shader->set("tex", 0);                         // set the value of "tex" uniform in the shader to 0
+        }
         if(sampler) 
-        shader->set("tex", 0);                         // set the value of "tex" uniform in the shader to 0
         sampler->bind(0);                              // bind the sampler to the texture unit 0
     }
 
