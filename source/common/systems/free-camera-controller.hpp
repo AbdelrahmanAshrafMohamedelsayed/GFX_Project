@@ -119,7 +119,7 @@ namespace our
 
             if (app->getKeyboard().isPressed(GLFW_KEY_SPACE))
             {
-                current_sensitivity -= glm::vec3(0, 0, 3)*deltaTime;
+                current_sensitivity -= glm::vec3(0, 0, 3);
             }
 
             position += front * (deltaTime * current_sensitivity.z);
