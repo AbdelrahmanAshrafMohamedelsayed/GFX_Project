@@ -319,6 +319,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             }, 
@@ -332,6 +335,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             }, 
@@ -345,6 +351,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             }, 
@@ -358,6 +367,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },            
@@ -371,6 +383,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },
@@ -384,6 +399,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },
@@ -397,6 +415,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },
@@ -410,6 +431,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },
@@ -423,6 +447,9 @@
                         "type": "Mesh Renderer",
                         "mesh": "plane",
                         "material": "road"
+                    },
+                    {
+                        "type": "Rerender"
                     }
                 ]
             },
