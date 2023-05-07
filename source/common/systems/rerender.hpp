@@ -11,6 +11,9 @@
 #include <glm/gtx/fast_trigonometry.hpp>
 
 #include <iostream>
+#include <vector>
+#include <chrono>
+
 
 namespace our
 {
@@ -24,6 +27,8 @@ namespace our
         // This should be called every frame to update all entities containing a MovementComponent. 
         void update(World* world, float deltaTime) {
           FreeCameraControllerComponent *controller = nullptr;
+          std::vector<RerenderComponent*> roads;
+
 
           for(auto entity : world->getEntities()){
                 // Get the Car
@@ -37,15 +42,24 @@ namespace our
                 RerenderComponent* Rerender = entity->getComponent<RerenderComponent>();
 
                 // If the movement component exists
-                if(Rerender && controller){
-                    // Change the position and rotation based on the linear & angular velocity and delta time.
-                    // std::cout<<entity->localTransform.position.z<<"\n";
-                    if((controller->getOwner()->localTransform.position.z < Rerender->getOwner()->localTransform.position.z)){
-                      Rerender->getOwner()->localTransform.position.z -=5;
-                    // std::cout<<entity->localTransform.position.z<<"\n";
-
-                    }
+                if(Rerender ){
+                    roads.push_back(Rerender);
                 }
+            }
+            int min_z = 100;
+            for (auto road : roads)
+            {
+              if(road->getOwner()->localTransform.position.z < min_z){
+                min_z = road->getOwner()->localTransform.position.z;
+              }
+            }
+
+            if(controller->getOwner()->localTransform.position.z - min_z <= 80 ){
+               for (auto road : roads)
+              {
+                road->getOwner()->localTransform.position.z -= 20;
+                
+              }
             }
         }
 
