@@ -6,6 +6,7 @@
 #include "free-camera-controller.hpp"
 #include "movement.hpp"
 #include "rerender.hpp"
+#include "randrender.hpp"
 
 namespace our
 {
@@ -43,6 +44,11 @@ namespace our
         {
             // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
             component = entity->addComponent<RerenderComponent>();
+        }
+        else if (type == RandRenderComponent::getID())
+        {
+            // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
+            component = entity->addComponent<RandRenderComponent>();
         }
 
         // If a component has been created, deserialize the rest of the input json object into it

@@ -614,6 +614,9 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, -1]
+                    },
+                    {
+                        "type": "RandRender"
                     }
                 ]
             },
@@ -631,6 +634,9 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, -2]
+                    },
+                    {
+                        "type": "RandRender"
                     }
                 ]
             },
@@ -648,6 +654,9 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, -3]
+                    },
+                    {
+                        "type": "RandRender"
                     }
                 ]
             },
@@ -665,6 +674,9 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, -4]
+                    },
+                    {
+                        "type": "RandRender"
                     }
                 ]
             },

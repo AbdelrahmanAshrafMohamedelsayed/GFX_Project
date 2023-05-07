@@ -80,12 +80,15 @@ set(COMMON_SOURCES
         source/common/components/component-deserializer.hpp
         source/common/components/rerender.hpp
         source/common/components/rerender.cpp
+        source/common/components/randrender.hpp
+        source/common/components/randrender.cpp
 
         source/common/systems/forward-renderer.hpp
         source/common/systems/forward-renderer.cpp
         source/common/systems/free-camera-controller.hpp
         source/common/systems/movement.hpp
         source/common/systems/rerender.hpp
+        source/common/systems/randrender.hpp
 )
 
 # Define the directories in which to search for the included headers
