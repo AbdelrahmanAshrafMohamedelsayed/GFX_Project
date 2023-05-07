@@ -34,6 +34,12 @@
                 "monkey": "assets/textures/monkey.png",
                 "car": "assets/textures/car.BMP",
                 "car2": "assets/textures/carTex2.BMP",
+                "car3": "assets/textures/carTex3.BMP",
+                "car4": "assets/textures/carTex4.BMP",
+                "car5": "assets/textures/carTex5.BMP",
+                "car6": "assets/textures/carTex6.BMP",
+                "car7": "assets/textures/carTex7.BMP",
+                "car8": "assets/textures/carTex8.BMP",
                 "road": "assets/textures/ro.jpg",
                 "building1":"assets/textures/build1.jpg",
                 "building2":"assets/textures/build2.jpg"
@@ -214,6 +220,96 @@
                     },
                     "tint": [1, 1, 1, 1],
                     "texture": "car2",
+                    "sampler": "default"
+                },
+                "car3":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car3",
+                    "sampler": "default"
+                },
+                "car4":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car4",
+                    "sampler": "default"
+                },
+                "car5":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car5",
+                    "sampler": "default"
+                },
+                "car6":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car6",
+                    "sampler": "default"
+                },
+                "car7":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car7",
+                    "sampler": "default"
+                },
+                "car8":{
+                    "type": "textured",
+                    "shader": "textured",
+                    "pipelineState": {
+                        "faceCulling":{
+                            "enabled": false
+                        },
+                        "depthTesting":{
+                            "enabled": true
+                        }
+                    },
+                    "tint": [1, 1, 1, 1],
+                    "texture": "car8",
                     "sampler": "default"
                 }
             }
@@ -518,6 +614,57 @@
                     {
                         "type": "Movement",
                         "linearVelocity": [0, 0, -1]
+                    }
+                ]
+            },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [7, -0.4, -80],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car3"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -2]
+                    }
+                ]
+            },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [3, -0.4, -100],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car4"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -3]
+                    }
+                ]
+            },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [-7, -0.4, -120],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car5"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -4]
                     }
                 ]
             },
