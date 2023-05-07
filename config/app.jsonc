@@ -680,6 +680,66 @@
                     }
                 ]
             },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [-7, -0.4, -200],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car6"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -7]
+                    },
+                    {
+                        "type": "RandRender"
+                    }
+                ]
+            },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [-7, -0.4, -300],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car7"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -9]
+                    },
+                    {
+                        "type": "RandRender"
+                    }
+                ]
+            },
+            {
+                "name": "racer",
+                // 10 in x leads to out of the road 7 in x make car in yellow line in right
+                "position": [-7, -0.4, -400],
+                "scale": [0.8, 0.8,0.8],
+                "components": [
+                    {
+                        "type": "Mesh Renderer",
+                        "mesh": "car",
+                        "material": "car8"
+                    },
+                    {
+                        "type": "Movement",
+                        "linearVelocity": [0, 0, -7]
+                    },
+                    {
+                        "type": "RandRender"
+                    }
+                ]
+            },
 /*----------------------------------------------------------------------------------*/
 
 /*------------------------------------Building----------------------------------------------*/

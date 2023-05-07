@@ -3,6 +3,7 @@
 #include "../ecs/world.hpp"
 #include "../components/randrender.hpp"
 #include "../components/free-camera-controller.hpp"
+#include "../components/movement.hpp"
 
 
 #include <glm/glm.hpp>
@@ -52,7 +53,7 @@ namespace our
               if((car->getOwner()->localTransform.position.z - controller->getOwner()->localTransform.position.z) >= 10){
                 
                 int min_z = -(controller->getOwner()->localTransform.position.z-50);
-                int max_z = -(controller->getOwner()->localTransform.position.z-80);
+                int max_z = -(controller->getOwner()->localTransform.position.z-500);
 
                 int output = min_z + (rand() % static_cast<int>(max_z - min_z + 1));
 
@@ -62,6 +63,14 @@ namespace our
                 int max_x = 7;
                 int output_x = min_x + (rand() % static_cast<int>(max_x - min_x + 1));
                 car->getOwner()->localTransform.position.x = output_x;
+                MovementComponent *movement =  car->getOwner()->getComponent<MovementComponent>();
+                if(movement){
+                  int max_speed = 30;
+                  int min_speed = 5;
+                  int output_speed = min_speed + (rand() % static_cast<int>(max_speed - min_speed + 1));
+                  movement->linearVelocity = glm::vec3(0,0,-output_speed);
+                }
+                
               }
             }
 
