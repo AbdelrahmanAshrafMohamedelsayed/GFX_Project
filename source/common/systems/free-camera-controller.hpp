@@ -107,12 +107,28 @@ namespace our
             // A & D moves the player left or right
             if (app->getKeyboard().isPressed(GLFW_KEY_A) || app->getKeyboard().isPressed(GLFW_KEY_LEFT))
             {
-                position -= right * (deltaTime * current_sensitivity.x);
+                // check if the player is not going out of the road
+                if (position.x > -8.0f)
+                    position -= right * (deltaTime * current_sensitivity.x);
+                if (FreeCameraControllerSystem::speed > 0.0f)
+                    FreeCameraControllerSystem::speed -= 5.0f * deltaTime;
+                // position -= right * (deltaTime * current_sensitivity.x);
             }
 
             if (app->getKeyboard().isPressed(GLFW_KEY_D) || app->getKeyboard().isPressed(GLFW_KEY_RIGHT))
             {
-                position += right * (deltaTime * current_sensitivity.x);
+                // check if the player is not going out of the road
+                if (position.x < 8.0f)
+                    position += right * (deltaTime * current_sensitivity.x);
+                else
+                {
+                    // first decrease the speed then update the position to simulate the friction
+                    // position -= right * (FreeCameraControllerSystem::speed);
+
+                    if (FreeCameraControllerSystem::speed > 0.0f)
+                        FreeCameraControllerSystem::speed -= 5.0f * deltaTime;
+                }
+                // position += right * (deltaTime * current_sensitivity.x);
             }
         }
 
