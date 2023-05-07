@@ -110,9 +110,13 @@ namespace our
                 // check if the player is not going out of the road
                 if (position.x > -8.0f)
                     position -= right * (deltaTime * current_sensitivity.x);
-                if (FreeCameraControllerSystem::speed > 0.0f)
-                    FreeCameraControllerSystem::speed -= 5.0f * deltaTime;
                 // position -= right * (deltaTime * current_sensitivity.x);
+                else
+                {
+                    // first decrease the speed linearly with time
+                    if (FreeCameraControllerSystem::speed > 0.0f)
+                        FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
+                }
             }
 
             if (app->getKeyboard().isPressed(GLFW_KEY_D) || app->getKeyboard().isPressed(GLFW_KEY_RIGHT))
@@ -122,11 +126,9 @@ namespace our
                     position += right * (deltaTime * current_sensitivity.x);
                 else
                 {
-                    // first decrease the speed then update the position to simulate the friction
-                    // position -= right * (FreeCameraControllerSystem::speed);
-
+                    // first decrease the speed linearly with time
                     if (FreeCameraControllerSystem::speed > 0.0f)
-                        FreeCameraControllerSystem::speed -= 5.0f * deltaTime;
+                        FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
                 }
                 // position += right * (deltaTime * current_sensitivity.x);
             }
