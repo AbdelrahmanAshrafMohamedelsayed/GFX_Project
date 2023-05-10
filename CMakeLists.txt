@@ -71,6 +71,8 @@ set(COMMON_SOURCES
 
         source/common/components/camera.hpp
         source/common/components/camera.cpp
+        source/common/components/collision.hpp
+        source/common/components/collision.cpp
         source/common/components/lightning.hpp
         source/common/components/lightning.cpp
         source/common/components/mesh-renderer.hpp
@@ -79,8 +81,6 @@ set(COMMON_SOURCES
         source/common/components/free-camera-controller.cpp
         source/common/components/movement.hpp
         source/common/components/movement.cpp
-        source/common/components/collision.hpp
-        source/common/components/collision.cpp
         source/common/components/component-deserializer.hpp
         source/common/components/rerender.hpp
         source/common/components/rerender.cpp

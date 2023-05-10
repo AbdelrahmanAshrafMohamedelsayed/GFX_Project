@@ -11,7 +11,7 @@
 #include <array>
 
 // This struct is used to store the location and size of a button and the code it should execute when clicked
-struct Button {
+struct eduButton {
     // The position (of the top-left corner) of the button and its size in pixels
     glm::vec2 position, size;
     // The function that should be excuted when the button is clicked. It takes no arguments and returns nothing.
@@ -34,10 +34,10 @@ struct Button {
 };
 
 // This state shows how to use some of the abstractions we created to make a menu.
-class Menustate: public our::State {
+class GameOverstate: public our::State {
 
     // A meterial holding the menu shader and the menu texture to draw
-    our::TexturedMaterial* menuMaterial;
+    our::TexturedMaterial* gameMaterial;
     // A material to be used to highlight hovered buttons (we will use blending to create a negative effect).
     our::TintedMaterial * highlightMaterial;
     // A rectangle mesh on which the menu material will be drawn
@@ -45,20 +45,20 @@ class Menustate: public our::State {
     // A variable to record the time since the state is entered (it will be used for the fading effect).
     float time;
     // An array of the button that we can interact with
-    std::array<Button, 2> buttons;
+    std::array<eduButton, 2> buttons;
 
     void onInitialize() override {
         // First, we create a material for the menu's background
-        menuMaterial = new our::TexturedMaterial();
+        gameMaterial = new our::TexturedMaterial();
         // Here, we load the shader that will be used to draw the background
-        menuMaterial->shader = new our::ShaderProgram();
-        menuMaterial->shader->attach("assets/shaders/textured.vert", GL_VERTEX_SHADER);
-        menuMaterial->shader->attach("assets/shaders/textured.frag", GL_FRAGMENT_SHADER);
-        menuMaterial->shader->link();
+        gameMaterial->shader = new our::ShaderProgram();
+        gameMaterial->shader->attach("assets/shaders/textured.vert", GL_VERTEX_SHADER);
+        gameMaterial->shader->attach("assets/shaders/textured.frag", GL_FRAGMENT_SHADER);
+        gameMaterial->shader->link();
         // Then we load the menu texture
-        menuMaterial->texture = our::texture_utils::loadImage("assets/textures/template.png");
+        gameMaterial->texture = our::texture_utils::loadImage("assets/textures/template.png");
         // Initially, the menu material will be black, then it will fade in
-        menuMaterial->tint = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
+        gameMaterial->tint = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
 
         // Second, we create a material to highlight the hovered buttons
         highlightMaterial = new our::TintedMaterial();
@@ -101,7 +101,7 @@ class Menustate: public our::State {
         // - The body {} which contains the code to be executed. 
         buttons[0].position = {830.0f, 607.0f};
         buttons[0].size = {400.0f, 33.0f};
-        buttons[0].action = [this](){this->getApp()->changeState("menu");};
+        buttons[0].action = [this](){this->getApp()->changeState("game-over");};
 
         buttons[1].position = {830.0f, 644.0f};
         buttons[1].size = {400.0f, 33.0f};
@@ -114,7 +114,7 @@ class Menustate: public our::State {
 
         if(keyboard.justPressed(GLFW_KEY_SPACE)){
             // If the space key is pressed in this frame, go to the play state
-            getApp()->changeState("play");
+            getApp()->changeState("menu");
         } else if(keyboard.justPressed(GLFW_KEY_ESCAPE)) {
             // If the escape key is pressed in this frame, exit the game
             getApp()->close();
@@ -150,12 +150,12 @@ class Menustate: public our::State {
 
         // First, we apply the fading effect.
         time += (float)deltaTime;
-        menuMaterial->tint = glm::vec4(glm::smoothstep(0.00f, 2.00f, time));
+        gameMaterial->tint = glm::vec4(glm::smoothstep(0.00f, 2.00f, time));
         // Then we render the menu background
         // Notice that I don't clear the screen first, since I assume that the menu rectangle will draw over the whole
         // window anyway.
-        menuMaterial->setup();
-        menuMaterial->shader->set("transform", VP*M);
+        gameMaterial->setup();
+        gameMaterial->shader->set("transform", VP*M);
         rectangle->draw();
 
         // For every button, check if the mouse is inside it. If the mouse is inside, we draw the highlight rectangle over it.
@@ -172,9 +172,9 @@ class Menustate: public our::State {
     void onDestroy() override {
         // Delete all the allocated resources
         delete rectangle;
-        delete menuMaterial->texture;
-        delete menuMaterial->shader;
-        delete menuMaterial;
+        delete gameMaterial->texture;
+        delete gameMaterial->shader;
+        delete gameMaterial;
         delete highlightMaterial->shader;
         delete highlightMaterial;
     }

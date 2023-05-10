@@ -77,21 +77,26 @@ namespace our
                     glm::vec3 collider2_max = collider2_position + collider2_size;
                     glm::vec3 collider2_min = collider2_position - collider2_size;
 
-                    // if the robot is in the range of the obstacle, take an action
-                    if (collider1_max.x == collider2_min.x || collider1_min.x == collider2_max.x ||
-                        collider1_max.y == collider2_min.y || collider1_min.y == collider2_max.y ||
-                        collider1_max.z == collider2_min.z || collider1_min.z == collider2_max.z)
+                    // i want to check if a car hit a car then game over
+                    if ((collider1_type == "car" && collider2_type == "racer")
+                        || (collider1_type == "racer" && collider2_type == "racer") 
+                        || (collider1_type == "me" && collider2_type == "racer")
+                        || (collider1_type == "me" && collider2_type == "car"))
                     {
-                        if ((collider1_type == "car" && collider2_type == "racer")
-                            || (collider1_type == "racer" && collider2_type == "racer") 
-                            || (collider1_type == "me" && collider2_type == "racer")
-                            || (collider1_type == "me" && collider2_type == "car"))
+                        if (collider1_max.x >= collider2_min.x || collider1_min.x <= collider2_max.x ||
+                            collider1_max.y >= collider2_min.y || collider1_min.y <= collider2_max.y ||
+                            collider1_max.z >= collider2_min.z || collider1_min.z <= collider2_max.z)
                         {
-                            app->registerState<Menustate>("menu");
-                            app->changeState("menu");
-                            return false;
+                            // if the car hit another car then game over
+                            // app->getStateMachine()->changeState(new gameOverState());
+                            app->registerState<GameOverstate>("game-over");
+                            app->changeState("game-over");
+                            return true;
                         }
                     }
+
+
+                    
                 }
             }
             return false;

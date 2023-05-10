@@ -5,6 +5,7 @@
 #include <ecs/world.hpp>
 #include <systems/forward-renderer.hpp>
 #include <systems/free-camera-controller.hpp>
+#include <systems/collisioner.hpp>
 #include <systems/movement.hpp>
 #include <systems/rerender.hpp>
 #include <systems/randrender.hpp>
@@ -19,6 +20,7 @@ class Playstate: public our::State {
     our::MovementSystem movementSystem;
     our::RerenderSystem rerenderSystem;
     our::RandRenderSystem randrenderSystem;
+    our::collisionSystem collision;
 
     void onInitialize() override {
         // First of all, we get the scene configuration from the app config
@@ -33,6 +35,7 @@ class Playstate: public our::State {
         }
         // We initialize the camera controller system since it needs a pointer to the app
         cameraController.enter(getApp());
+        collision.enter(getApp());
         // Then we initialize the renderer
         auto size = getApp()->getFrameBufferSize();
         renderer.initialize(size, config["renderer"]);
@@ -44,8 +47,12 @@ class Playstate: public our::State {
         cameraController.update(&world, (float)deltaTime);
         rerenderSystem.update(&world, (float)deltaTime);
         randrenderSystem.update(&world, (float)deltaTime);
+        bool hit = collision.update(&world, (float)deltaTime);
         // And finally we use the renderer system to draw the scene
         renderer.render(&world);
+        if (hit) {
+            getApp()->changeState("game-over");
+        }
 
         // Get a reference to the keyboard object
         auto& keyboard = getApp()->getKeyboard();
