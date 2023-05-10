@@ -329,6 +329,19 @@
                     },
                     {
                         "type": "Free Camera Controller"
+                    },
+                    {
+                        "type": "Collision"
+                    },
+                    {
+                        "type": "Light",
+                        "lightType": "Spot",
+                        "direction": [-1, 0, 0],
+                        "diffuse": [1, 1, 1],
+                        "specular": [1, 1, 1],
+                        "attenuation": [0.0095, 0.0095, 0.00095],
+                        "cone_angles.inner": 20,
+                        "cone-angles.outer": 50
                     }
                 ],
                 "children": [
@@ -617,6 +630,9 @@
                     },
                     {
                         "type": "RandRender"
+                    },
+                    {
+                        "type": "Collision"
                     }
                 ]
             },
@@ -657,6 +673,9 @@
                     },
                     {
                         "type": "RandRender"
+                    },
+                    {
+                        "type": "Collision"
                     }
                 ]
             },
@@ -677,6 +696,9 @@
                     },
                     {
                         "type": "RandRender"
+                    },
+                    {
+                        "type": "Collision"
                     }
                 ]
             },
@@ -717,6 +739,9 @@
                     },
                     {
                         "type": "RandRender"
+                    },
+                    {
+                        "type": "Collision"
                     }
                 ]
             },
@@ -737,6 +762,9 @@
                     },
                     {
                         "type": "RandRender"
+                    },
+                    {
+                        "type": "Collision"
                     }
                 ]
             },
