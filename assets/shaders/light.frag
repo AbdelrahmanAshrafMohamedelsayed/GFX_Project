@@ -76,7 +76,7 @@ void main() {
     for(int light_idx = 0; light_idx < min(MAX_LIGHTS, light_count); light_idx++){
         Light light = lights[light_idx];
         float attenuation = 1.0;
-        if(light.LightType == DIRECTIONAL){
+        if(light.LightType == DirectionalLight){
             world_to_light_dir = -light.direction;
         } else {
             world_to_light_dir = light.position - fs_in.world;
@@ -85,7 +85,7 @@ void main() {
 
             attenuation = 1.0 / dot(light.attenuation, vec3(d*d, d, 1.0));
 
-            if(light.LightType == SPOT){
+            if(light.LightType == SpotLight){
                 float angle = acos(dot(light.direction, -world_to_light_dir));
                 attenuation *= smoothstep(light.cone_angles.y, light.cone_angles.x, angle);
             }

@@ -8,6 +8,7 @@
 #include "rerender.hpp"
 #include "randrender.hpp"
 #include "collision.hpp"
+#include "lightning.hpp"
 
 namespace our
 {
@@ -55,6 +56,11 @@ namespace our
         {
             // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
             component = entity->addComponent<collisionComponent>();
+        }
+        else if (type == Lightning_Component::getID())
+        {
+            // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
+            component = entity->addComponent<Lightning_Component>();
         }
 
         // If a component has been created, deserialize the rest of the input json object into it
