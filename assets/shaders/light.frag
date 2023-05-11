@@ -1,8 +1,8 @@
 #version 330
 #define MAX_LIGHTS 10
-#define DIRECTIONAL 0
-#define POINT       1
-#define SPOT        2
+#define DirectionalLight 0
+#define PointLight       1
+#define SpotLight        2
 
 struct Light {
     int LightType;
