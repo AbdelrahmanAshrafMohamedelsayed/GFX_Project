@@ -19,10 +19,6 @@ using namespace std;
 namespace our
 {
 
-    // The free camera controller system is responsible for moving every entity which contains a FreeCameraControllerComponent.
-    // This system is added as a slightly complex example for how use the ECS framework to implement logic.
-    // For more information, see "common/components/free-camera-controller.hpp"
-
     class collisionSystem
     {
         Application *app; // The application in which the state runs
@@ -37,8 +33,17 @@ namespace our
         bool update(World *world, float deltaTime)
         {
             vector<collisionComponent *> colliders;
+            // FreeCameraControllerComponent *controller = nullptr;
+            // // std::vector<RerenderComponent*> roads;
 
-            // store all the existed colliders in the scene
+
+            // for(auto entity : world->getEntities()){
+            //       // Get the Car
+            //       controller = entity->getComponent<FreeCameraControllerComponent>();
+            //       if(controller)break;
+            //   }
+
+            // Store the colliders from the screen
             for (auto entity : world->getEntities())
             {
                 if (auto collider = entity->getComponent<collisionComponent>(); collider)
@@ -47,10 +52,11 @@ namespace our
                 }
             }
 
-            // here is the logic of the collision: if 2 types of colliders are collides the action should be taken:
+            // loop through the colliders to see if they are colliding
             for (auto collider_1 : colliders)
             {
                 string collider1_type = collider_1->getOwner()->name;
+                std::cout << collider1_type << endl;
 
                 // get the collider's position
                 glm::vec3 collider1_position = collider_1->getOwner()->localTransform.position;
@@ -78,14 +84,12 @@ namespace our
                     glm::vec3 collider2_min = collider2_position - collider2_size;
 
                     // i want to check if a car hit a car then game over
-                    if ((collider1_type == "car" && collider2_type == "racer")
-                        || (collider1_type == "racer" && collider2_type == "racer") 
-                        || (collider1_type == "me" && collider2_type == "racer")
-                        || (collider1_type == "me" && collider2_type == "car"))
+                    if ((collider1_type == "me" && collider2_type == "racer") || 
+                        (collider1_type == "racer" && collider2_type =="me")) 
                     {
-                        if (collider1_max.x >= collider2_min.x || collider1_min.x <= collider2_max.x ||
-                            collider1_max.y >= collider2_min.y || collider1_min.y <= collider2_max.y ||
-                            collider1_max.z >= collider2_min.z || collider1_min.z <= collider2_max.z)
+                        // i want to check if a collider1 hit a collider2 then game over
+                        if ((collider1_max.x > collider2_min.x && collider1_min.x < collider2_max.x) &&
+                            (collider1_max.z > collider2_min.z && collider1_min.z < collider2_max.z))
                         {
                             // if the car hit another car then game over
                             // app->getStateMachine()->changeState(new gameOverState());

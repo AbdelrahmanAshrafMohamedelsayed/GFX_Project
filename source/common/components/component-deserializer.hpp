@@ -7,6 +7,7 @@
 #include "movement.hpp"
 #include "rerender.hpp"
 #include "randrender.hpp"
+#include "collision.hpp"
 
 namespace our
 {
@@ -49,6 +50,11 @@ namespace our
         {
             // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
             component = entity->addComponent<RandRenderComponent>();
+        }
+        else if (type == collisionComponent::getID())
+        {
+            // If it matches MeshRendererComponent, create a new MeshRendererComponent and set the pointer to it
+            component = entity->addComponent<collisionComponent>();
         }
 
         // If a component has been created, deserialize the rest of the input json object into it
