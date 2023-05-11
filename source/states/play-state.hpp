@@ -21,6 +21,8 @@ class Playstate: public our::State {
     our::RerenderSystem rerenderSystem;
     our::RandRenderSystem randrenderSystem;
     our::collisionSystem collision;
+    float velocity = 0.0f;
+
 
     void onInitialize() override {
         // First of all, we get the scene configuration from the app config
@@ -44,10 +46,10 @@ class Playstate: public our::State {
     void onDraw(double deltaTime) override {
         // Here, we just run a bunch of systems to control the world logic
         movementSystem.update(&world, (float)deltaTime);
-        cameraController.update(&world, (float)deltaTime);
+        cameraController.update(&world, (float)deltaTime, velocity);
         rerenderSystem.update(&world, (float)deltaTime);
         randrenderSystem.update(&world, (float)deltaTime);
-        bool hit = collision.update(&world, (float)deltaTime);
+        bool hit = collision.update(&world, (float)deltaTime, velocity);
         // And finally we use the renderer system to draw the scene
         renderer.render(&world);
         if (hit) {

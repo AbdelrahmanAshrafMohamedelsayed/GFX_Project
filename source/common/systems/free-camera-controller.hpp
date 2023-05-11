@@ -38,7 +38,7 @@ namespace our
         // give initial values to the static variables
 
         // This should be called every frame to update all entities containing a FreeCameraControllerComponent
-        void update(World *world, float deltaTime)
+        void update(World *world, float deltaTime, float &velocity)
         {
             //  make the FreeCameraControllerSystem::score increase with the speed and the time in a linear way and suitable way and print it
             FreeCameraControllerSystem::score += (int)(speed * deltaTime);
@@ -93,14 +93,19 @@ namespace our
             {
                 // current_sensitivity -= glm::vec3(0, 0, 3);
                 // decrease the speed linearly with time
-                if (FreeCameraControllerSystem::speed > 0.0f)
+                if (FreeCameraControllerSystem::speed > 0.0f){
+                    
                     FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
+                    velocity = speed;
+                }
             }
             else
             {
                 // increase the speed linearly with time
-                if (FreeCameraControllerSystem::speed < 200.0f)
+                if (FreeCameraControllerSystem::speed < 200.0f){
                     FreeCameraControllerSystem::speed += 1.0f * deltaTime;
+                    velocity = speed;
+                }
             }
 
             position += front * (deltaTime * FreeCameraControllerSystem::speed);

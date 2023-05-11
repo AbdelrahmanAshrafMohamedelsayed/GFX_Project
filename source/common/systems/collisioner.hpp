@@ -30,7 +30,7 @@ namespace our
         }
 
         // This should be called every frame to update all entities have any sort of colliders
-        bool update(World *world, float deltaTime)
+        bool update(World *world, float deltaTime, float velocity)
         {
             vector<collisionComponent *> colliders;
             // FreeCameraControllerComponent *controller = nullptr;
@@ -72,7 +72,7 @@ namespace our
                 for (auto collider_2 : colliders)
                 {
                     string collider2_type = collider_2->getOwner()->name;
-
+                    std::cout << velocity << endl;
                     // get the collider's position
                     glm::vec3 collider2_position = collider_2->getOwner()->localTransform.position;
 
@@ -96,6 +96,7 @@ namespace our
                             app->registerState<GameOverstate>("game-over");
                             app->changeState("game-over");
                             return true;
+                            
                         }
                     }
 
