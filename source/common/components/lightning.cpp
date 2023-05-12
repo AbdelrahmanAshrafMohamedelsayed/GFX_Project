@@ -31,6 +31,6 @@ namespace our
         // cone_angles = glm::vec2(data.value("cone_angles", glm::vec2(glm::radians(90.0f), glm::radians(120.0f))));
         cone_angles.x = glm::radians((float)data.value("cone_angles.inner",90));
         cone_angles.y = glm::radians((float)data.value("cone_angles.outer",120));
-        color = glm::vec3 (data.value("color", glm::vec3(0.0f, 0.0f, 0.0f)));
+        // color = glm::vec3 (data.value("color", glm::vec3(0.0f, 0.0f, 0.0f)));
     }
 }

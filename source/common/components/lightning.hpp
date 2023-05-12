@@ -28,7 +28,7 @@ namespace our {
         glm::vec2 cone_angles = glm::vec2(0.0f, 0.0f);
 
         // color
-        glm::vec3 color = glm::vec3(0.0f, 0.0f, 0.0f);
+        // glm::vec3 color = glm::vec3(0.0f, 0.0f, 0.0f);
         
         // The ID of this component type is "Light"
         static std::string getID() { return "light"; }

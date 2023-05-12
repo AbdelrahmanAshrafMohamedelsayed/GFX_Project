@@ -1,7 +1,7 @@
 #version 330
 #define MAX_LIGHTS 10
 #define DirectionalLight 0
-#define PointLight       1
+#define PointLight       1  
 #define SpotLight        2
 
 struct Light {
@@ -100,5 +100,5 @@ void main() {
 
     }
     
-    frag_color = vec4(color, 1.0);
+    frag_color.rgb = vec4(color, 1.0);
 }

@@ -53,7 +53,7 @@ namespace our {
         void deserialize(const nlohmann::json& data) override;
     };
 
-    class LightMaterial : public TintedMaterial {
+    class LightMaterial : public Material {
     public:
         Texture2D  *albedo, *specular , *emissive , *roughness , *ambient_occlusion;
         Sampler* sampler;

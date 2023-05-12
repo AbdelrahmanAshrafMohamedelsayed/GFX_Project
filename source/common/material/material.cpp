@@ -78,7 +78,7 @@ namespace our
     void LightMaterial::setup() const
     {
         Material::setup();
-        if (albedo)
+        if (albedo != nullptr)
         {
             glActiveTexture(GL_TEXTURE0);
             albedo->bind();
@@ -86,7 +86,7 @@ namespace our
             shader->set("material.albedo", 0);
 
         }
-        if (specular)
+        if (specular != nullptr)
         {
             glActiveTexture(GL_TEXTURE1);
             specular->bind();
@@ -94,7 +94,7 @@ namespace our
             shader->set("material.specular", 1);
 
         }
-        if (emissive)
+        if (emissive != nullptr)
         {
             glActiveTexture(GL_TEXTURE2);
             emissive->bind();
@@ -102,7 +102,7 @@ namespace our
             shader->set("material.emissive", 2);
 
         }
-        if (roughness)
+        if (roughness != nullptr)
         {
             glActiveTexture(GL_TEXTURE3);
             roughness->bind();
@@ -110,7 +110,7 @@ namespace our
             shader->set("material.roughness", 3);
 
         }
-        if (ambient_occlusion)
+        if (ambient_occlusion != nullptr)
         {
             glActiveTexture(GL_TEXTURE4);
             ambient_occlusion->bind();

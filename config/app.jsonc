@@ -193,6 +193,22 @@
                     "sampler": "default"
                 },
                 "car":{
+                    // "type": "lighted",
+                    // "shader": "lighted",
+                    // "pipelineState": {
+                    //     "faceCulling": {
+                    //         "enabled": false
+                    //     },
+                    //     "depthTesting": {
+                    //         "enabled": true
+                    //     }
+                    // },
+                    // "albedo": "car",
+                    // "sampler": "default",
+                    // "specular": "white",
+                    // "emissive": "black",
+                    // "ambient_occlusion": "car",
+                    // "roughness": "black"
                     "type": "textured",
                     "shader": "textured",
                     "pipelineState": {
