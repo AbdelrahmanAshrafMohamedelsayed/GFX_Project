@@ -43,7 +43,7 @@ namespace our
         {
             //  make the FreeCameraControllerSystem::score increase with the speed and the time in a linear way and suitable way and print it
             FreeCameraControllerSystem::score += (int)(speed * deltaTime);
-            std::cout << "FreeCameraControllerSystem::score: " << FreeCameraControllerSystem::score << std::endl;
+            // std::cout << "FreeCameraControllerSystem::score: " << FreeCameraControllerSystem::score << std::endl;
             // speedStatic = speed;
             // timeStatic = time;
             time += deltaTime;

@@ -56,7 +56,7 @@ namespace our
             for (auto collider_1 : colliders)
             {
                 string collider1_type = collider_1->getOwner()->name;
-                std::cout << collider1_type << endl;
+                // std::cout << collider1_type << endl;
 
                 // get the collider's position
                 glm::vec3 collider1_position = collider_1->getOwner()->localTransform.position;
@@ -72,7 +72,7 @@ namespace our
                 for (auto collider_2 : colliders)
                 {
                     string collider2_type = collider_2->getOwner()->name;
-                    std::cout << velocity << endl;
+                    // std::cout << velocity << endl;
                     // get the collider's position
                     glm::vec3 collider2_position = collider_2->getOwner()->localTransform.position;
 
