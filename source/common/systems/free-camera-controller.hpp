@@ -28,6 +28,7 @@ namespace our
         // define the FreeCameraControllerSystem::score of the player
         int score = 0;
         float speed = 5.0f; // The speed of the car
+        int prev_time = 0;
         float time = 0.0f;  // The time since the beginning of the game
         // static float speedStatic; // The speed of the car
         // static float timeStatic;  // The time since the beginning of the game
@@ -42,19 +43,25 @@ namespace our
         void update(World *world, float deltaTime, float &velocity)
         {
             //  make the FreeCameraControllerSystem::score increase with the speed and the time in a linear way and suitable way and print it
-            FreeCameraControllerSystem::score += (int)(speed * deltaTime);
-            app->score = score;
+
             // std::cout << "FreeCameraControllerSystem::score: " << FreeCameraControllerSystem::score << std::endl;
             // speedStatic = speed;
             // timeStatic = time;
             time += deltaTime;
-            // // increase speed by 5 every 1 seconds
+            if(time-prev_time >=1){
+                prev_time = time;
+                score += (int)(speed * 0.1);
+                app->score = score;
+            }
+            // increase speed by 5 every 1 seconds
             // if (time > 1.0f)
             // {
             //     speed += 5.0f;
             //     time = 0.0f;
             // }
             // inrease the speed linearly with time
+
+            
 
             // First of all, we search for an entity containing both a CameraComponent and a FreeCameraControllerComponent
             // As soon as we find one, we break
@@ -149,6 +156,11 @@ namespace our
                 mouse_locked = false;
                 app->getMouse().unlockMouse(app->getWindow());
             }
+            score = 0;
+            app->score = 0;
+            speed = 0;
+            time=0;
+            prev_time = 0;
         }
     };
 
