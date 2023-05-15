@@ -225,6 +225,8 @@ int our::Application::run(int run_for_frames) {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
+    ImFont *font1 = io.Fonts->AddFontFromFileTTF("assets\\fonts\\FiraCode-Medium.ttf", 80.0f);
+    ImFont *font2 = io.Fonts->AddFontFromFileTTF("assets\\fonts\\TechnoRaceItalic-eZRWe.otf", 80.0f);
     ImGui::StyleColorsDark();
 
     // Initialize ImGui for GLFW and OpenGL
@@ -271,6 +273,26 @@ int our::Application::run(int run_for_frames) {
         ImGui::NewFrame();
 
         if(currentState) currentState->onImmediateGui(); // Call to run any required Immediate GUI.
+        if (currentState == states["play"]){
+
+            ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove 
+                        | ImGuiWindowFlags_NoCollapse 
+                        | ImGuiWindowFlags_NoBackground 
+                        | ImGuiWindowFlags_NoTitleBar 
+                        | ImGuiWindowFlags_NoResize);
+
+            ImGui::PushFont(font2);
+            ImGui::SetCursorPosX(0);
+            ImGui::SetCursorPosY(10);
+            std::string l1 = "Score: ";
+            std::string l2 = std::to_string(score);
+            std::string totalLine = l1 + l2;
+            ImGui::Text(totalLine.c_str());
+            ImGui::PopFont();
+
+            ImGui::End();
+        }
+
 
         // If ImGui is using the mouse or keyboard, then we don't want the captured events to affect our keyboard and mouse objects.
         // For example, if you're focusing on an input and writing "W", the keyboard object shouldn't record this event.
