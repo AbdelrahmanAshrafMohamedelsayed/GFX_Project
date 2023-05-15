@@ -53,7 +53,7 @@ namespace our
           min_z = road->getOwner()->localTransform.position.z;
         }
       }
-      if (controller->getOwner()->localTransform.position.z - min_z <= 80)
+      if (controller->getOwner()->localTransform.position.z - min_z <= 100)
       {
         for (auto road : roads)
         {
