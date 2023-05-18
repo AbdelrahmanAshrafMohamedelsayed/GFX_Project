@@ -115,7 +115,13 @@ namespace our
                             
                         }
                     }
-
+                    if ((collider1_type == "racer" && collider2_type == "racer") ) {
+                        if ((collider1_max.x >= collider2_min.x && collider1_min.x <= collider2_max.x) &&
+                            (collider1_max.z >= (collider2_min.z) && collider1_min.z <= (collider2_max.z + 1.5f))) {
+                                 collider_1->getOwner()->localTransform.position.z -= 5.0f;
+                                 collider_2->getOwner()->localTransform.position.z += 5.0f;
+                            }
+                    }
 
                     
                 }
