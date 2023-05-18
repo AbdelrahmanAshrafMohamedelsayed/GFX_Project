@@ -776,6 +776,9 @@
           },
           {
             "type": "RandRender"
+          },
+          {
+            "type": "Collision"
           }
         ]
       },
@@ -842,6 +845,9 @@
           },
           {
             "type": "RandRender"
+          },
+          {
+            "type": "Collision"
           }
         ]
       },

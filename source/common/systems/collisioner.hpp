@@ -30,7 +30,7 @@ namespace our
         }
 
         // This should be called every frame to update all entities have any sort of colliders
-        bool update(World *world, float deltaTime, float velocity)
+        bool update(World *world, float deltaTime, float &velocity)
         {
             vector<collisionComponent *> colliders;
             // FreeCameraControllerComponent *controller = nullptr;
@@ -84,18 +84,34 @@ namespace our
                     glm::vec3 collider2_min = collider2_position - collider2_size;
 
                     // i want to check if a car hit a car then game over
-                    if ((collider1_type == "me" && collider2_type == "racer") || 
-                        (collider1_type == "racer" && collider2_type =="me")) 
+                    if ((collider1_type == "me" && collider2_type == "racer") ) 
                     {
                         // i want to check if a collider1 hit a collider2 then game over
-                        if ((collider1_max.x > collider2_min.x && collider1_min.x < collider2_max.x) &&
-                            (collider1_max.z > collider2_min.z && collider1_min.z < collider2_max.z))
+                        if ((collider1_max.x >= collider2_min.x && collider1_min.x <= collider2_max.x) &&
+                            (collider1_max.z >= (collider2_min.z) && collider1_min.z <= (collider2_max.z + 1.5f)))
                         {
                             // if the car hit another car then game over
                             // app->getStateMachine()->changeState(new gameOverState());
-                            app->registerState<GameOverstate>("game-over");
-                            app->changeState("game-over");
-                            return true;
+                            if (velocity >= 25.0f){
+                                app->registerState<GameOverstate>("game-over");
+                                app->changeState("game-over");
+                                return true;
+                            } else {
+                                // from 0 - 10 -> zero else -> 5
+                                if (velocity >= 0.0f || velocity <= 10.0f)
+                                    velocity = 0.0f;
+                                else if (velocity > 10.0f || velocity <= 20.0f)
+                                    velocity = 5.0f;
+
+                                // collider_1->getOwner()->localTransform.position.z += 20.0f * deltaTime;
+                                if ((velocity >= 0.0f || velocity <= 1.0f))
+                                    collider_2->getOwner()->localTransform.position.z -= 5.0f * 1.0 * deltaTime;
+                                else
+                                    collider_2->getOwner()->localTransform.position.z -= 5.0f * velocity * deltaTime;
+
+                                // std::cout << velocity << std::endl;
+                            }
+                            
                             
                         }
                     }

@@ -50,7 +50,7 @@ namespace our
             time += deltaTime;
             if(time-prev_time >=1){
                 prev_time = time;
-                score += (int)(speed * 0.1);
+                score += (int)(velocity * 0.1);
                 app->score = score;
             }
             // increase speed by 5 every 1 seconds
@@ -102,22 +102,22 @@ namespace our
             {
                 // current_sensitivity -= glm::vec3(0, 0, 3);
                 // decrease the speed linearly with time
-                if (FreeCameraControllerSystem::speed > 0.0f){
+                if (velocity > 0.0f){
                     
-                    FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
-                    velocity = speed;
+                    velocity -= 3.0f * deltaTime;
+                    // velocity = speed;
                 }
             }
             else
             {
                 // increase the speed linearly with time
-                if (FreeCameraControllerSystem::speed < 200.0f){
-                    FreeCameraControllerSystem::speed += 1.0f * deltaTime;
-                    velocity = speed;
+                if (velocity < 200.0f){
+                    velocity += 1.0f * deltaTime;
+                    // velocity = speed;
                 }
             }
 
-            position += front * (deltaTime * FreeCameraControllerSystem::speed);
+            position += front * (deltaTime * velocity);
             // A & D moves the player left or right
             if (app->getKeyboard().isPressed(GLFW_KEY_A) || app->getKeyboard().isPressed(GLFW_KEY_LEFT))
             {
@@ -128,8 +128,8 @@ namespace our
                 else
                 {
                     // first decrease the speed linearly with time
-                    if (FreeCameraControllerSystem::speed > 0.0f)
-                        FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
+                    if (velocity > 0.0f)
+                        velocity -= 3.0f * deltaTime;
                 }
             }
 
@@ -141,8 +141,8 @@ namespace our
                 else
                 {
                     // first decrease the speed linearly with time
-                    if (FreeCameraControllerSystem::speed > 0.0f)
-                        FreeCameraControllerSystem::speed -= 3.0f * deltaTime;
+                    if (velocity > 0.0f)
+                        velocity -= 3.0f * deltaTime;
                 }
                 // position += right * (deltaTime * current_sensitivity.x);
             }
@@ -158,7 +158,7 @@ namespace our
             }
             score = 0;
             app->score = 0;
-            speed = 0;
+            // velocity = 0;
             time=0;
             prev_time = 0;
         }

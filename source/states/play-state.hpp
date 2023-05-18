@@ -21,7 +21,7 @@ class Playstate: public our::State {
     our::RerenderSystem rerenderSystem;
     our::RandRenderSystem randrenderSystem;
     our::collisionSystem collision;
-    float velocity = 0.0f;
+    float velocity = 5.0f;
 
 
     void onInitialize() override {
@@ -66,6 +66,7 @@ class Playstate: public our::State {
     }
 
     void onDestroy() override {
+        velocity = 5.0f;
         // Don't forget to destroy the renderer
         renderer.destroy();
         // On exit, we call exit for the camera controller system to make sure that the mouse is unlocked
