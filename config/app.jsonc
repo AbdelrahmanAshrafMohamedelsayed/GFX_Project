@@ -1386,7 +1386,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1402,7 +1409,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1418,7 +1432,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1438,7 +1459,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1455,7 +1483,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1472,7 +1507,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -1492,7 +1534,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1508,7 +1557,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1524,7 +1580,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1544,7 +1607,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1561,7 +1631,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1578,7 +1655,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -1598,7 +1682,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1614,7 +1705,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1630,7 +1728,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1650,7 +1755,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1667,7 +1779,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1684,7 +1803,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -1704,7 +1830,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1720,7 +1853,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1736,7 +1876,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1756,7 +1903,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1773,7 +1927,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1790,7 +1951,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -1810,7 +1978,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1826,7 +2001,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1842,7 +2024,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1862,7 +2051,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1879,7 +2075,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       {
@@ -1896,7 +2099,14 @@
           },
           {
             "type": "Rerender"
-          }
+          },
+          {
+            "type": "Light",
+            "lightType": "point",
+            "specular": [1, 1, 0],
+            "diffuse": [1, 1, 0],
+            "attenuation": [0.02, 0.02, 0.002]
+        }
         ]
       },
       /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -1916,7 +2126,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -1932,7 +2149,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -1948,7 +2172,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -1968,7 +2199,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -1985,7 +2223,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2002,7 +2247,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -2021,7 +2273,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2037,7 +2296,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2053,7 +2319,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -2073,7 +2346,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2090,7 +2370,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2107,7 +2394,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -2125,7 +2419,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2141,7 +2442,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2157,7 +2465,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -2177,7 +2492,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2194,7 +2516,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2211,7 +2540,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -2230,7 +2566,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2246,7 +2589,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2262,7 +2612,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -2282,7 +2639,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2299,7 +2663,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2316,7 +2687,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -2335,7 +2713,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2351,7 +2736,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2367,7 +2759,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -2387,7 +2786,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2404,7 +2810,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2421,7 +2834,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
@@ -2440,7 +2860,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2456,7 +2883,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2472,7 +2906,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in right---------------------------------------*/
@@ -2492,7 +2933,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2509,7 +2957,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         {
@@ -2526,7 +2981,14 @@
             },
             {
               "type": "Rerender"
-            }
+            },
+            {
+              "type": "Light",
+              "lightType": "point",
+              "specular": [1, 1, 0],
+              "diffuse": [1, 1, 0],
+              "attenuation": [0.02, 0.02, 0.002]
+          }
           ]
         },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
