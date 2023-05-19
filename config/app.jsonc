@@ -22,6 +22,10 @@
         "textured": {
           "vs": "assets/shaders/textured.vert",
           "fs": "assets/shaders/textured.frag"
+        },
+        "lighted":{
+          "vs": "assets/shaders/light.vert",
+          "fs": "assets/shaders/light.frag"
         }
       },
       // to add any picture as texture add a new property here
@@ -131,8 +135,8 @@
           "sampler": "default"
         },
         "road": {
-          "type": "textured",
-          "shader": "textured",
+          "type": "lighted",
+          "shader": "lighted",
           "pipelineState": {
             "faceCulling": {
               "enabled": false
@@ -141,9 +145,12 @@
               "enabled": true
             }
           },
-          "tint": [1, 1, 1, 1],
-          "texture": "road",
-          "sampler": "default"
+          "albedo": "road",
+          "sampler": "default",
+          "specular": "white",
+          "emissive": "black",
+          "ambient_occlusion": "road",
+          "roughness": "black"
         },
         "Lamppost": {
           "type": "textured",
@@ -2519,9 +2526,25 @@
               "type": "Rerender"
             }
           ]
-        }
+        },
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
-
+        // point light from lamp
+        {
+          "name": "lamp light",
+          "position": [0, 4, -100],
+          "components": [
+              {
+                  "type": "light",
+                  "lightType": "PointLight",
+                  "specular": [1, 0.3, 1.0],
+                  "diffuse": [1, 0.3, 1.0],
+                  "attenuation": [0.02, 0.02, 0.002]
+              },
+              {
+                "type": "Rerender"
+              }
+          ]
+        }
       ]
   }
 }

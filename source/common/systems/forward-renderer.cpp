@@ -257,7 +257,7 @@ namespace our
 
                     std::string light_name = "lights[" + std::to_string(i) + "]";
 
-                    lightMaterial->shader->set(light_name + ".type", (GLint)lights[i]->light_type);
+                    lightMaterial->shader->set(light_name + ".LightType", (GLint)lights[i]->light_type);
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
                     lightMaterial->shader->set(light_name + ".attenuation", lights[i]->attenuation);
@@ -353,7 +353,7 @@ namespace our
 
                     std::string light_name = "lights[" + std::to_string(i) + "]";
 
-                    lightMaterial->shader->set(light_name + ".type", (GLint)lights[i]->light_type);
+                    lightMaterial->shader->set(light_name + ".LightType", (GLint)lights[i]->light_type);
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
                     lightMaterial->shader->set(light_name + ".attenuation", lights[i]->attenuation);

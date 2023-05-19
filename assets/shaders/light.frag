@@ -100,5 +100,7 @@ void main() {
 
     }
     
-    frag_color.rgb = vec4(color, 1.0);
+    // frag_color.rgb = vec4(color, 1.0);
+    frag_color.rgb = color;
+
 }
