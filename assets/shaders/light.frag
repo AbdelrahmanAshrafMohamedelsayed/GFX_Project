@@ -22,7 +22,7 @@ struct Sky {
     vec3 top, middle, bottom;
 };
 
-// uniform Sky sky;
+uniform Sky sky;
 
 vec3 compute_sky_light(vec3 normal){
     vec3 extreme = normal.y > 0 ? sky.top : sky.bottom;
