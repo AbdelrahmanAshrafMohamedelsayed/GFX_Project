@@ -31,7 +31,7 @@ namespace our {
         // glm::vec3 color = glm::vec3(0.0f, 0.0f, 0.0f);
         
         // The ID of this component type is "Light"
-        static std::string getID() { return "light"; }
+        static std::string getID() { return "lighted"; }
 
         // Reads Light data from the given json object
         void deserialize (const nlohmann::json& data) override ;

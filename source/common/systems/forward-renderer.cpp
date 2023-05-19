@@ -247,9 +247,9 @@ namespace our
                 // light material's light position to the camera's position
                 lightMaterial->shader->set("light_count", (int)lights.size());
 
-                lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
                 for (unsigned i = 0; i < lights.size(); i++)
                 {
                     glm::vec3 light_position = lights[i]->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1);
@@ -343,9 +343,9 @@ namespace our
                 // light material's light position to the camera's position
                 lightMaterial->shader->set("light_count", (int)lights.size());
 
-                lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
+                // lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
                 for (unsigned i = 0; i < lights.size(); i++)
                 {
                     glm::vec3 light_position = lights[i]->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1);
