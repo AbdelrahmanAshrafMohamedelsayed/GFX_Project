@@ -1,5 +1,5 @@
 #version 330
-#define MAX_LIGHTS 10
+#define MAX_LIGHTS 100
 #define DirectionalLight 0
 #define PointLight       1  
 #define SpotLight        2

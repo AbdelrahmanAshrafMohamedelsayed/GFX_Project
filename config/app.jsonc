@@ -387,10 +387,10 @@
           },
           {
             "type": "Light",
-            "lightType": "Spot",
-            "direction": [-1, 0, 0],
-            "diffuse": [1, 1, 1],
-            "specular": [1, 1, 1],
+            "lightType": "spot",
+            "direction": [0, 0, -3],
+            "diffuse": [0.5, 0.5, 0.5],
+            "specular": [0.5, 0.5, 0.5],
             "attenuation": [0.0095, 0.0095, 0.00095],
             "cone_angles.inner": 20,
             "cone-angles.outer": 50
@@ -1391,7 +1391,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1414,7 +1414,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1437,7 +1437,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1464,7 +1464,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1488,7 +1488,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1512,7 +1512,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1539,7 +1539,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1562,7 +1562,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1585,7 +1585,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1612,7 +1612,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1636,7 +1636,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1660,7 +1660,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1687,7 +1687,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1710,7 +1710,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1733,7 +1733,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1760,7 +1760,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1784,7 +1784,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1808,7 +1808,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1835,7 +1835,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1858,7 +1858,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1881,7 +1881,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1908,7 +1908,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1932,7 +1932,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1956,7 +1956,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -1983,7 +1983,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2006,7 +2006,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2029,7 +2029,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2056,7 +2056,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2080,7 +2080,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2104,7 +2104,7 @@
             "type": "Light",
             "lightType": "point",
             "specular": [1, 1, 0],
-            "diffuse": [1, 1, 0],
+            "diffuse": [0.4, 0.4, 0],
             "attenuation": [0.02, 0.02, 0.002]
         }
         ]
@@ -2131,7 +2131,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2154,7 +2154,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2177,7 +2177,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2204,7 +2204,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2228,7 +2228,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2252,7 +2252,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2278,7 +2278,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2301,7 +2301,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2324,7 +2324,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2351,7 +2351,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2375,7 +2375,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2399,7 +2399,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2424,7 +2424,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2447,7 +2447,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2470,7 +2470,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2497,7 +2497,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2521,7 +2521,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2545,7 +2545,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2571,7 +2571,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2594,7 +2594,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2617,7 +2617,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2644,7 +2644,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2668,7 +2668,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2692,7 +2692,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2718,7 +2718,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2741,7 +2741,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2764,7 +2764,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2791,7 +2791,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2815,7 +2815,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2839,7 +2839,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2865,7 +2865,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2888,7 +2888,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2911,7 +2911,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2938,7 +2938,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2962,7 +2962,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
@@ -2986,7 +2986,7 @@
               "type": "Light",
               "lightType": "point",
               "specular": [1, 1, 0],
-              "diffuse": [1, 1, 0],
+              "diffuse": [0.4, 0.4, 0],
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
