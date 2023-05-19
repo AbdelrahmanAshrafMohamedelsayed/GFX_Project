@@ -8,7 +8,8 @@ struct Light {
     int LightType;
     vec3 position;
     vec3 direction;
-    vec3 color;
+    vec3 diffuse;
+    vec3 specular;
     vec3 attenuation;
     vec2 cone_angles;
 };
@@ -18,14 +19,14 @@ uniform Light lights[MAX_LIGHTS];
 uniform int light_count;
 
 struct Sky {
-    vec3 top, horizon, bottom;
+    vec3 top, middle, bottom;
 };
 
 uniform Sky sky;
 
 vec3 compute_sky_light(vec3 normal){
     vec3 extreme = normal.y > 0 ? sky.top : sky.bottom;
-    return mix(sky.horizon, extreme, normal.y * normal.y);
+    return mix(sky.middle, extreme, normal.y * normal.y);
 }
 
 struct Material {
@@ -86,21 +87,20 @@ void main() {
             attenuation = 1.0 / dot(light.attenuation, vec3(d*d, d, 1.0));
 
             if(light.LightType == SpotLight){
-                float angle = acos(dot(light.direction, -world_to_light_dir));
+                float angle = acos(dot(-world_to_light_dir,light.direction));
                 attenuation *= smoothstep(light.cone_angles.y, light.cone_angles.x, angle);
             }
         }
 
-        vec3 computed_diffuse = light.color * diffuse * lambert(normal, world_to_light_dir);
+        vec3 computed_diffuse = light.diffuse * diffuse * lambert(normal, world_to_light_dir);
 
         vec3 reflected = reflect(-world_to_light_dir, normal);
-        vec3 computed_specular = light.color * specular * phong(reflected, view, shininess);
+        vec3 computed_specular = light.specular * specular * phong(reflected, view, shininess);
 
         color += (computed_diffuse + computed_specular) * attenuation;
 
     }
     
-    // frag_color.rgb = vec4(color, 1.0);
     frag_color.rgb = color;
 
 }

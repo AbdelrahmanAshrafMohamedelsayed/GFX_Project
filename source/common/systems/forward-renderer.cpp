@@ -35,9 +35,6 @@ namespace our
             skyPipelineState.faceCulling.enabled = true;
             skyPipelineState.faceCulling.culledFace = GL_FRONT;
 
-            
-
-
             // Load the sky texture (note that we don't need mipmaps since we want to avoid any unnecessary blurring while rendering the sky)
             std::string skyTextureFile = config.value<std::string>("sky", "");
             Texture2D *skyTexture = texture_utils::loadImage(skyTextureFile, false);
@@ -182,30 +179,28 @@ namespace our
         glm::vec3 eye = camera->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1.0);
         glm::vec3 center = camera->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, -1, 1.0);
         glm::vec3 cameraForward = -glm::vec3(camera->getViewMatrix()[2]);
-        auto owner = camera->getOwner(); 
-        
+        auto owner = camera->getOwner();
+
         // here we are getting the camera forward vector from the camera's view matrix
-        // by normalizing the center of the camera -position where the camera is looking at- 
+        // by normalizing the center of the camera -position where the camera is looking at-
         // to the eye of the camera -position of the camera-
         // glm::vec3 cameraForward = glm::normalize(center - eye);
         std::sort(transparentCommands.begin(), transparentCommands.end(), [cameraForward](const RenderCommand &first, const RenderCommand &second)
-        {
+                  {
             //TODO: (Req 9) Finish this function
             // HINT: the following return should return true "first" should be drawn before "second". 
             
             bool checkDraw = glm::dot(cameraForward,first.center) > glm::dot(cameraForward , second.center) ? true : false; 
-            return checkDraw;
-        }); 
+            return checkDraw; });
 
         // TODO: (Req 9) Get the camera ViewProjection matrix and store it in VP
 
         // here we are getting the camera view projection matrix by multiplying
         // the camera's projection matrix by the camera's view matrix
-        glm::mat4 VP = camera->getProjectionMatrix(windowSize) * camera->getViewMatrix(); 
+        glm::mat4 VP = camera->getProjectionMatrix(windowSize) * camera->getViewMatrix();
 
         // TODO: (Req 9) Set the OpenGL viewport using viewportStart and viewportSize
         glViewport(0, 0, windowSize.x, windowSize.y); // here we are setting the viewport to the window size
-
 
         // TODO: (Req 9) Set the clear color to black and the clear depth to 1
 
@@ -224,16 +219,15 @@ namespace our
             glBindFramebuffer(GL_DRAW_FRAMEBUFFER, postprocessFrameBuffer); // here we are binding the framebuffer
         }
 
-        // TODO: (Req 9) Clear the color and depth buffers 
+        // TODO: (Req 9) Clear the color and depth buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // TODO: (Req 9) Draw all the opaque commands
         //  Don't forget to set the "transform" uniform to be equal the model-view-projection matrix for each render command
-        // this loop to draw all the opaque commands by setting the transform uniform to be equal to the model-view-projection matrix and then drawing the mesh 
+        // this loop to draw all the opaque commands by setting the transform uniform to be equal to the model-view-projection matrix and then drawing the mesh
         for (auto &command : opaqueCommands)
         {
             command.material->setup();
-
 
             // here we want to do downcasting to check if the material is a holding light material inside or not
             if (auto lightMaterial = dynamic_cast<LightMaterial *>(command.material); lightMaterial)
@@ -243,7 +237,7 @@ namespace our
                 lightMaterial->shader->set("M", command.localToWorld);
                 lightMaterial->shader->set("M_IT", glm::transpose(glm::inverse(command.localToWorld)));
 
-                // if it is a light material then we want to set the 
+                // if it is a light material then we want to set the
                 // light material's light position to the camera's position
                 lightMaterial->shader->set("light_count", (int)lights.size());
 
@@ -261,7 +255,6 @@ namespace our
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
                     lightMaterial->shader->set(light_name + ".attenuation", lights[i]->attenuation);
-
 
                     switch (lights[i]->light_type)
                     {
@@ -284,11 +277,6 @@ namespace our
             {
                 command.material->shader->set("transform", VP * command.localToWorld);
             }
-            
-            
-            
-
-
 
             // else{
             //     command.material->shader->set("transform", VP * command.localToWorld);
@@ -306,22 +294,20 @@ namespace our
             // glm::vec3 cameraPosition = camera->getOwner()->localTransform.position;
             glm::vec3 cameraPosition = camera->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1.0);
 
-
             // TODO: (Req 10) Create a model matrix for the sy such that it always follows the camera (sky sphere center = camera position)
-            Transform skyModelMat; // here we are creating a model matrix for the sky sphere
+            Transform skyModelMat;                 // here we are creating a model matrix for the sky sphere
             skyModelMat.position = cameraPosition; // setting the sky sphere position to the camera position
 
             // TODO: (Req 10) We want the sky to be drawn behind everything (in NDC space, z=1)
             //  We can acheive the is by multiplying by an extra matrix after the projection but what values should we put in it?
             glm::mat4 alwaysBehindTransform = glm::mat4(
-                1.0f, 0.0f, 0.0f, 0.0f,  
+                1.0f, 0.0f, 0.0f, 0.0f,
                 0.0f, 1.0f, 0.0f, 0.0f,
-                0.0f, 0.0f, 0.0f, 0.0f, 
-                0.0f, 0.0f, 1.0f, 1.0f  
-                );
+                0.0f, 0.0f, 0.0f, 0.0f,
+                0.0f, 0.0f, 1.0f, 1.0f);
             // TODO: (Req 10) set the "transform" uniform
-            glm::mat4 combineMat = alwaysBehindTransform * VP * skyModelMat.toMat4(); // here we are get the transform matrix 
-            skyMaterial->shader->set("transform", combineMat); // here we are setting the transform uniform to the transform matrix
+            glm::mat4 combineMat = alwaysBehindTransform * VP * skyModelMat.toMat4(); // here we are get the transform matrix
+            skyMaterial->shader->set("transform", combineMat);                        // here we are setting the transform uniform to the transform matrix
             // TODO: (Req 10) draw the sky sphere
             // at last we are drawing the sky sphere
             skySphere->draw();
@@ -332,20 +318,20 @@ namespace our
         for (auto &command : transparentCommands)
         {
             command.material->setup();
-             if (auto lightMaterial = dynamic_cast<LightMaterial *>(command.material); lightMaterial)
+            if (auto lightMaterial = dynamic_cast<LightMaterial *>(command.material); lightMaterial)
             {
                 lightMaterial->shader->set("VP", VP);
                 lightMaterial->shader->set("eye", eye);
                 lightMaterial->shader->set("M", command.localToWorld);
                 lightMaterial->shader->set("M_IT", glm::transpose(glm::inverse(command.localToWorld)));
 
-                // if it is a light material then we want to set the 
+                // if it is a light material then we want to set the
                 // light material's light position to the camera's position
                 lightMaterial->shader->set("light_count", (int)lights.size());
 
-                lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
+                lightMaterial->shader->set("Sky.top", glm::vec3(0.7, 0.3, 0.8));
+                lightMaterial->shader->set("Sky.middle", glm::vec3(0.7, 0.3, 0.8));
+                lightMaterial->shader->set("Sky.bottom", glm::vec3(0.7, 0.3, 0.8));
                 for (unsigned i = 0; i < lights.size(); i++)
                 {
                     glm::vec3 light_position = lights[i]->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1);
@@ -357,7 +343,6 @@ namespace our
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
                     lightMaterial->shader->set(light_name + ".attenuation", lights[i]->attenuation);
-
 
                     switch (lights[i]->light_type)
                     {

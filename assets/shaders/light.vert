@@ -6,7 +6,7 @@ layout(location = 2) in vec2 tex_coord;
 layout(location = 3) in vec3 normal;
 
 uniform mat4 VP;
-uniform vec3 camera_position;
+uniform vec3 eye;
 uniform mat4 M;
 uniform mat4 M_IT;
 
@@ -24,6 +24,6 @@ void main() {
     vs_out.color = color;
     vs_out.tex_coord = tex_coord;
     vs_out.normal = normalize((M_IT * vec4(normal, 0.0)).xyz);
-    vs_out.view = camera_position - world;
+    vs_out.view = normalize(eye - world);
     vs_out.world = world;
 }
