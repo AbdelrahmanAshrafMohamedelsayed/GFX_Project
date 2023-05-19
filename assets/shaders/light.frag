@@ -22,7 +22,7 @@ struct Sky {
     vec3 top, middle, bottom;
 };
 
-uniform Sky sky;
+// uniform Sky sky;
 
 vec3 compute_sky_light(vec3 normal){
     vec3 extreme = normal.y > 0 ? sky.top : sky.bottom;
@@ -61,7 +61,7 @@ void main() {
     vec3 normal = normalize(fs_in.normal);
     vec3 view = normalize(fs_in.view);
     
-    vec3 ambient_light = compute_sky_light(normal);
+    // vec3 ambient_light = compute_sky_light(normal);
 
     vec3 diffuse = texture(material.albedo, fs_in.tex_coord).rgb;
     vec3 specular = texture(material.specular, fs_in.tex_coord).rgb;
@@ -72,7 +72,7 @@ void main() {
     float shininess = 2.0 / pow(clamp(roughness, 0.001, 0.999), 4.0) - 2.0;
     
     vec3 world_to_light_dir;
-    vec3 color = emissive + ambient_light * ambient;
+    vec3 color = emissive + ambient;
 
     for(int light_idx = 0; light_idx < min(MAX_LIGHTS, light_count); light_idx++){
         Light light = lights[light_idx];
