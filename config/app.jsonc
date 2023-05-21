@@ -363,7 +363,7 @@
           },
           "albedo": "car8",
           "sampler": "default",
-          "specular": "white",
+          "specular": "black",
           "emissive": "black",
           "ambient_occlusion": "car8",
           "roughness": "black"
