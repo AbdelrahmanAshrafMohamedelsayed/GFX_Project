@@ -157,7 +157,7 @@ namespace our
                 app->getMouse().unlockMouse(app->getWindow());
             }
             score = 0;
-            app->score = 0;
+            // app->score = 0;
             // velocity = 0;
             time=0;
             prev_time = 0;

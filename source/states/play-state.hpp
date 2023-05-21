@@ -36,6 +36,7 @@ class Playstate: public our::State {
             world.deserialize(config["world"]);
         }
         // We initialize the camera controller system since it needs a pointer to the app
+        getApp()->score = 0;
         cameraController.enter(getApp());
         collision.enter(getApp());
         // Then we initialize the renderer

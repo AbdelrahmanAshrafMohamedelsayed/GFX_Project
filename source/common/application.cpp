@@ -315,8 +315,10 @@ int our::Application::run(int run_for_frames)
             currentState->onImmediateGui(); // Call to run any required Immediate GUI.
         if (currentState == states["play"])
         {
-            // gghgf
+            ImGui::SetNextWindowSize(ImVec2(1280, 720));
+            
             ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+            // ImGui::SetWindowPos(" ", ImVec2(0, 0));
 
             ImGui::PushFont(font2);
             ImGui::SetCursorPosX(0);
@@ -328,6 +330,32 @@ int our::Application::run(int run_for_frames)
             ImGui::PopFont();
 
             ImGui::End();
+        }
+        else if (currentState == states["game-over"])
+        {
+            ImGui::SetNextWindowSize(ImVec2(1280, 720));
+            
+            ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+            // ImGui::SetWindowPos(" ", ImVec2(0, 0));
+
+            ImGui::PushFont(font2);
+            ImGui::SetCursorPosX(450);
+            ImGui::SetCursorPosY(260);
+            std::string line = "GAME OVER";
+            ImGui::Text(line.c_str());
+            ImGui::PopFont();
+
+            ImGui::PushFont(font2);
+            ImGui::SetCursorPosX(450);
+            ImGui::SetCursorPosY(360);
+            std::string l1 = "Score: ";
+            std::string l2 = std::to_string(score);
+            std::string totalLine = l1 + l2;
+            ImGui::Text(totalLine.c_str());
+            ImGui::PopFont();
+
+            ImGui::End();
+
         }
 
         // If ImGui is using the mouse or keyboard, then we don't want the captured events to affect our keyboard and mouse objects.
