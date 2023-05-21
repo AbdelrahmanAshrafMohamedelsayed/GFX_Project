@@ -123,7 +123,7 @@ namespace our
             {
                 // check if the player is not going out of the road
                 if (position.x > -8.0f)
-                    position -= right * (deltaTime * current_sensitivity.x);
+                    position -= right * (deltaTime * current_sensitivity.x) * 0.07f * velocity;
                 // position -= right * (deltaTime * current_sensitivity.x);
                 else
                 {
@@ -137,7 +137,7 @@ namespace our
             {
                 // check if the player is not going out of the road
                 if (position.x < 8.0f)
-                    position += right * (deltaTime * current_sensitivity.x);
+                    position += right * (deltaTime * current_sensitivity.x) * 0.07f * velocity;
                 else
                 {
                     // first decrease the speed linearly with time

@@ -351,8 +351,8 @@
           "sampler": "default"
         },
         "car8": {
-          "type": "textured",
-          "shader": "textured",
+          "type": "lighted",
+          "shader": "lighted",
           "pipelineState": {
             "faceCulling": {
               "enabled": false
@@ -361,9 +361,12 @@
               "enabled": true
             }
           },
-          "tint": [1, 1, 1, 1],
-          "texture": "car8",
-          "sampler": "default"
+          "albedo": "car8",
+          "sampler": "default",
+          "specular": "white",
+          "emissive": "black",
+          "ambient_occlusion": "car8",
+          "roughness": "black"
         }
       }
     },
@@ -377,24 +380,35 @@
           {
             "type": "Mesh Renderer",
             "mesh": "car",
-            "material": "car"
+            "material": "car8"
           },
           {
             "type": "Free Camera Controller"
           },
           {
             "type": "Collision"
-          },
-          {
-            "type": "Light",
-            "lightType": "spot",
-            "direction": [0, 0, -3],
-            "diffuse": [0.5, 0.5, 0.5],
-            "specular": [0.5, 0.5, 0.5],
-            "attenuation": [0.0095, 0.0095, 0.00095],
-            "cone_angles.inner": 20,
-            "cone-angles.outer": 50
           }
+          // {
+          //   "type": "Light",
+          //   "lightType": "spot",
+          //   "direction": [-1, 0, 0],
+          //   "diffuse": [0.5, 0.5, 0.5],
+          //   "specular": [0.5, 0.5, 0.5],
+          //   "attenuation": [0.0095, 0.0095, 0.00095],
+          //   "cone_angles.inner": 20,
+          //   "cone-angles.outer": 50
+          // }
+          // {
+          //   "type": "Light",
+          //   "lightType": "spot",
+          //   "direction": [2, 0, -1],
+          //   "diffuse": [0.5, 0.5, 0.5],
+          //   "specular": [0.5, 0.5, 0.5],
+          //   "attenuation": [0.0095, 0.0095, 0.00095],
+          //   "cone_angles.inner": 20,
+          //   "cone-angles.outer": 50
+          // }
+          
         ],
         "children": [
           {
@@ -403,6 +417,22 @@
             "components": [
               {
                 "type": "Camera"
+              }
+            ]
+          },
+          {
+            "name": "light",
+            "position": [0, 0, -3],
+            "components": [
+              {
+                "type": "Light",
+                "lightType": "spot",
+                "direction": [0, 8, -1],
+                "diffuse": [0.5, 0.5, 0.5],
+                "specular": [0.5, 0.5, 0.5],
+                "attenuation": [0.0095, 0.0095, 0.00095],
+                "cone_angles.inner": 20,
+                "cone-angles.outer": 50
               }
             ]
           }
@@ -892,7 +922,7 @@
           {
             "type": "Mesh Renderer",
             "mesh": "car",
-            "material": "car8"
+            "material": "car"
           },
           {
             "type": "Movement",
