@@ -120,18 +120,7 @@ class Menustate: public our::State {
             getApp()->close();
         }
 
-        // Get a reference to the mouse object and get the current mouse position
-        auto& mouse = getApp()->getMouse();
-        glm::vec2 mousePosition = mouse.getMousePosition();
-
-        // If the mouse left-button is just pressed, check if the mouse was inside
-        // any menu button. If it was inside a menu button, run the action of the button.
-        if(mouse.justPressed(0)){
-            for(auto& button: buttons){
-                if(button.isInside(mousePosition))
-                    button.action();
-            }
-        }
+        
 
         // Get the framebuffer size to set the viewport and the create the projection matrix.
         glm::ivec2 size = getApp()->getFrameBufferSize();
@@ -158,14 +147,7 @@ class Menustate: public our::State {
         menuMaterial->shader->set("transform", VP*M);
         rectangle->draw();
 
-        // For every button, check if the mouse is inside it. If the mouse is inside, we draw the highlight rectangle over it.
-        for(auto& button: buttons){
-            if(button.isInside(mousePosition)){
-                highlightMaterial->setup();
-                highlightMaterial->shader->set("transform", VP*button.getLocalToWorld());
-                rectangle->draw();
-            }
-        }
+       
         
     }
 
