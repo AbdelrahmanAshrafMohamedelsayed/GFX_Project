@@ -388,27 +388,6 @@
           {
             "type": "Collision"
           }
-          // {
-          //   "type": "Light",
-          //   "lightType": "spot",
-          //   "direction": [-1, 0, 0],
-          //   "diffuse": [0.5, 0.5, 0.5],
-          //   "specular": [0.5, 0.5, 0.5],
-          //   "attenuation": [0.0095, 0.0095, 0.00095],
-          //   "cone_angles.inner": 20,
-          //   "cone-angles.outer": 50
-          // }
-          // {
-          //   "type": "Light",
-          //   "lightType": "spot",
-          //   "direction": [2, 0, -1],
-          //   "diffuse": [0.5, 0.5, 0.5],
-          //   "specular": [0.5, 0.5, 0.5],
-          //   "attenuation": [0.0095, 0.0095, 0.00095],
-          //   "cone_angles.inner": 20,
-          //   "cone-angles.outer": 50
-          // }
-          
         ],
         "children": [
           {
@@ -422,12 +401,13 @@
           },
           {
             "name": "light",
-            "position": [0, 0, -3],
+            "position": [0, 0, -2],
+            "rotation":[-90,0,0],
             "components": [
               {
                 "type": "Light",
                 "lightType": "spot",
-                "direction": [0, 8, -1],
+                "direction": [0, 6, -1],
                 "diffuse": [0.5, 0.5, 0.5],
                 "specular": [0.5, 0.5, 0.5],
                 "attenuation": [0.0095, 0.0095, 0.00095],
@@ -435,9 +415,33 @@
                 "cone-angles.outer": 50
               }
             ]
+          }, 
+          {
+            "position": [-30, 10, -70],
+            "rotation": [0, 0, 0],
+            "scale": [2.5, 2.5, 2.5],
+            "components": [
+              {
+                "type": "Mesh Renderer",
+                "mesh": "sphere",
+                "material": "moon"
+              },
+              {
+                "type": "Movement",
+                "angularVelocity": [0, 0, 0]
+              },
+              {
+                  "type": "Light",
+                  "lightType": "directional",
+                  "direction":[1, -1, 1],
+                  "specular": [1, 1, 1],
+                  "diffuse": [1, 1, 1]
+              }
+            ]
           }
         ]
       },
+      
 
       // {
       //     "name": "me",
@@ -1030,22 +1034,184 @@
       /*----------------------------------------------------------------------------------*/
 
       /*----------------------------------------------------------------------------------*/
-      {
-        "position": [30, 0, 0],
-        "rotation": [0, 0, 0],
-        "scale": [5, 5, 5],
-        "components": [
-          {
-            "type": "Mesh Renderer",
-            "mesh": "sphere",
-            "material": "moon"
-          },
-          {
-            "type": "Movement",
-            "angularVelocity": [0, 90, 0]
-          }
-        ]
-      },
+      
+      // {
+      //   "position": [-30, 10, -90],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -110],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -130],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -150],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -170],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+      // {
+      //   "position": [-30, 10, -70],
+      //   "rotation": [0, 0, 0],
+      //   "scale": [2.5, 2.5, 2.5],
+      //   "components": [
+      //     {
+      //       "type": "Mesh Renderer",
+      //       "mesh": "sphere",
+      //       "material": "moon"
+      //     },
+      //     {
+      //       "type": "Movement",
+      //       "angularVelocity": [0, 90, 0]
+      //     }
+      //   ]
+      // },
+
       /*-------------------------------------------Lamppost---------------------------------------*/
       {
         "name": "Lamppost",
@@ -3020,25 +3186,38 @@
               "attenuation": [0.02, 0.02, 0.002]
           }
           ]
-        },
+        }
         /*-------------------------------------------lamps for one lamppost in left---------------------------------------*/
         // point light from lamp
-        {
-          "name": "lamp light",
-          "position": [0, 4, -100],
-          "components": [
-              {
-                  "type": "Light",
-                  "lightType": "point",
-                  "specular": [1, 1, 1.0],
-                  "diffuse": [1, 1, 1.0],
-                  "attenuation": [0.02, 0.02, 0.002]
-              },
-              {
-                "type": "Rerender"
-              }
-          ]
-        }
+        // {
+        //   "name": "lamp light",
+        //   "position": [0, 4, -100],
+        //   "components": [
+        //       {
+        //           "type": "Light",
+        //           "lightType": "point",
+        //           "specular": [1, 1, 1.0],
+        //           "diffuse": [1, 1, 1.0],
+        //           "attenuation": [0.02, 0.02, 0.002]
+        //       },
+        //       {
+        //         "type": "Rerender"
+        //       }
+        //   ]
+        // }
+        // {
+        //   "name": "lamp light",
+        //   "position": [0, 4, -100],
+        //   "components": [
+        //       {
+        //           "type": "Light",
+        //           "lightType": "directional",
+        //           "direction":[-8, 2, -1],
+        //           "specular": [0.01, 0.02, 0.04],
+        //           "diffuse": [0.07, 0.03, 0.05]
+        //       }
+        //   ]
+        // }
       ]
   }
 }

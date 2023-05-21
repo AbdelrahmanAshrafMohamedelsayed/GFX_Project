@@ -241,9 +241,9 @@ namespace our
                 // light material's light position to the camera's position
                 lightMaterial->shader->set("light_count", (int)lights.size());
 
-                lightMaterial->shader->set("sky.top", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.middle", glm::vec3(0.7, 0.3, 0.8));
-                lightMaterial->shader->set("sky.bottom", glm::vec3(0.7, 0.3, 0.8));
+                lightMaterial->shader->set("sky.top", glm::vec3(0, 0.1, 0.5));
+                lightMaterial->shader->set("sky.middle", glm::vec3(0.3, 0.3, 0.3));
+                lightMaterial->shader->set("sky.bottom", glm::vec3(0.1, 0.1, 0.1));
                 for (unsigned i = 0; i < lights.size(); i++)
                 {
                     glm::vec3 light_position = lights[i]->getOwner()->getLocalToWorldMatrix() * glm::vec4(0, 0, 0, 1);
@@ -259,11 +259,11 @@ namespace our
                     switch (lights[i]->light_type)
                     {
                     case LightType::DirectionalLight:
-                        lightMaterial->shader->set(light_name + ".direction", light_direction);
+                        lightMaterial->shader->set(light_name + ".direction", glm::normalize(light_direction));
                         break;
                     case LightType::SpotLight:
                         lightMaterial->shader->set(light_name + ".position", light_position);
-                        lightMaterial->shader->set(light_name + ".direction", light_direction);
+                        lightMaterial->shader->set(light_name + ".direction", glm::normalize(light_direction));
                         lightMaterial->shader->set(light_name + ".cone_angles", lights[i]->cone_angles);
                         break;
                     case LightType::PointLight:
