@@ -16,9 +16,7 @@
 namespace our
 {
 
-  // The movement system is responsible for moving every entity which contains a MovementComponent.
-  // This system is added as a simple example for how use the ECS framework to implement logic.
-  // For more information, see "common/components/movement.hpp"
+  // system for infinity illusion  
   class RerenderSystem
   {
   public:
@@ -37,9 +35,9 @@ namespace our
       // For each entity in the world
       for (auto entity : world->getEntities())
       {
-        // Get the movement component if it exists
+        // Get the rerender component if it exists
         RerenderComponent *Rerender = entity->getComponent<RerenderComponent>();
-        // If the movement component exists
+        // If the rerender component exists
         if (Rerender)
         {
           roads.push_back(Rerender);
@@ -48,15 +46,18 @@ namespace our
       int min_z = 100;
       for (auto road : roads)
       {
+        // store the min z where this is the furthest car from our car
         if (road->getOwner()->localTransform.position.z < min_z)
         {
           min_z = road->getOwner()->localTransform.position.z;
         }
       }
+      // if this car near a certain value we will move all rerender components 
       if (controller->getOwner()->localTransform.position.z - min_z <= 100)
       {
         for (auto road : roads)
         {
+          // be -20 so this make as if we are in infinity
           road->getOwner()->localTransform.position.z -= 20;
         }
       }

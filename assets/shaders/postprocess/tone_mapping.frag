@@ -4,7 +4,7 @@ out vec4 frag_color;  // Output variable for the final color of the fragment
 in vec2 tex_coord;    // Input variable for the texture coordinates of the fragment
 uniform sampler2D tex;       // Uniform variable for the input texture
 
-uniform float exposure = 3;  // Uniform variable for the exposure value (default: 3)
+uniform float exposure = 2;  // Uniform variable for the exposure value (default: 3)
 
 void main()
 {
