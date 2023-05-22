@@ -232,6 +232,7 @@ namespace our
             // here we want to do downcasting to check if the material is a holding light material inside or not
             if (auto lightMaterial = dynamic_cast<LightMaterial *>(command.material); lightMaterial)
             {
+                // send the view projection matrix and and other data to the fragement shader
                 lightMaterial->shader->set("VP", VP);
                 lightMaterial->shader->set("eye", eye);
                 lightMaterial->shader->set("M", command.localToWorld);
@@ -251,6 +252,7 @@ namespace our
 
                     std::string light_name = "lights[" + std::to_string(i) + "]";
 
+                    // send the LightType and and other data to the fragement shader
                     lightMaterial->shader->set(light_name + ".LightType", (GLint)lights[i]->light_type);
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
@@ -320,6 +322,8 @@ namespace our
             command.material->setup();
             if (auto lightMaterial = dynamic_cast<LightMaterial *>(command.material); lightMaterial)
             {
+
+                // send the view projection matrix and and other data to the fragement shader
                 lightMaterial->shader->set("VP", VP);
                 lightMaterial->shader->set("eye", eye);
                 lightMaterial->shader->set("M", command.localToWorld);
@@ -339,6 +343,7 @@ namespace our
 
                     std::string light_name = "lights[" + std::to_string(i) + "]";
 
+                    // send the lightType and other data to the fragement shader
                     lightMaterial->shader->set(light_name + ".LightType", (GLint)lights[i]->light_type);
                     lightMaterial->shader->set(light_name + ".diffuse", lights[i]->diffuse);
                     lightMaterial->shader->set(light_name + ".specular", lights[i]->specular);
@@ -347,11 +352,11 @@ namespace our
                     switch (lights[i]->light_type)
                     {
                     case LightType::DirectionalLight:
-                        lightMaterial->shader->set(light_name + ".direction", light_direction);
+                        lightMaterial->shader->set(light_name + ".direction", glm::normalize(light_direction));
                         break;
                     case LightType::SpotLight:
                         lightMaterial->shader->set(light_name + ".position", light_position);
-                        lightMaterial->shader->set(light_name + ".direction", light_direction);
+                        lightMaterial->shader->set(light_name + ".direction", glm::normalize(light_direction));
                         lightMaterial->shader->set(light_name + ".cone_angles", lights[i]->cone_angles);
                         break;
                     case LightType::PointLight:

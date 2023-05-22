@@ -24,6 +24,8 @@ void main() {
     vs_out.color = color;
     vs_out.tex_coord = tex_coord;
     vs_out.normal = normalize((M_IT * vec4(normal, 0.0)).xyz);
+
+    // Compute the view vector there then send it fg shader as well.
     vs_out.view = normalize(eye - world);
     vs_out.world = world;
 }
